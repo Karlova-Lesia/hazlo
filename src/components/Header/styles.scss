@@ -1,0 +1,8 @@
+.header {
+  padding: 20px 250px 5px 250px;
+  @apply flex flex-wrap content-between;
+}
+
+.logo {
+  @apply text-h1 text-mint font-mmd;
+}
