@@ -23,6 +23,10 @@
     "rules": {
         "react/jsx-filename-extension": "off",
         "react/function-component-definition": "off",
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "jsx-a11y/label-has-associated-control": "off",
+        "no-unused-expressions": "off",
+        "react/button-has-type": "off",
+        "import/prefer-default-export": "off"
     }
 }
