@@ -7,8 +7,9 @@ import {
 } from 'react-router-dom';
 import Header from '../Header';
 import RegistrationPage from '../pages/RegistrationPage';
+import AuthorizationPage from '../pages/AuthorizationPage';
 import { AlertTemplate, options } from '../AlertTemplate';
-import { REGISTRATION_PAGE } from '../../constants/routes';
+import { REGISTRATION_PAGE, AUTHORIZATION_PAGE } from '../../constants/routes';
 
 function App() {
   return (
@@ -16,8 +17,11 @@ function App() {
       <Header />
       <Router>
         <Switch>
-          <Route exact path={REGISTRATION_PAGE}>
+          <Route path={REGISTRATION_PAGE}>
             <RegistrationPage />
+          </Route>
+          <Route path={AUTHORIZATION_PAGE}>
+            <AuthorizationPage />
           </Route>
         </Switch>
       </Router>

@@ -5,7 +5,6 @@ import './styles.scss';
 function Button(props) {
   const {
     children,
-    className,
     type,
     disabled,
     isLoading,
@@ -14,7 +13,7 @@ function Button(props) {
   return (
     <div className="btn-wrapper">
       <button
-        className={className}
+        className="btn bg-mint"
         type={type}
         disabled={disabled}
       >
@@ -27,7 +26,6 @@ function Button(props) {
 
 Button.propTypes = {
   children: PropTypes.string,
-  className: PropTypes.string,
   type: PropTypes.oneOf(['submit', 'button', 'reset']),
   disabled: PropTypes.bool,
   isLoading: PropTypes.bool,
@@ -35,7 +33,6 @@ Button.propTypes = {
 
 Button.defaultProps = {
   children: '',
-  className: '',
   type: 'button',
   disabled: false,
   isLoading: false,
