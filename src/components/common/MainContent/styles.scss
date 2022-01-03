@@ -1,0 +1,11 @@
+.main-content-wrapper {
+  @apply flex justify-center items-center flex-col;
+}
+
+.title {
+  @apply font-ptm text-lightgrey text-h3;
+}
+
+.main-content {
+  @apply flex justify-around w-1/2 mt-5;
+}
