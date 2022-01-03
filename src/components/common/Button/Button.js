@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Loader from 'react-loader-spinner';
 import './styles.scss';
 
 function Button(props) {
@@ -6,8 +7,8 @@ function Button(props) {
     children,
     className,
     type,
-    active,
     disabled,
+    isLoading,
   } = props;
 
   return (
@@ -15,10 +16,10 @@ function Button(props) {
       <button
         className={className}
         type={type}
-        active={active}
         disabled={disabled}
       >
         {children}
+        {isLoading && <Loader type="TailSpin" color="lightgrey" height="20px" width="20px" radius={3} arialLabel="loading-indicator" />}
       </button>
     </div>
   );
@@ -28,16 +29,16 @@ Button.propTypes = {
   children: PropTypes.string,
   className: PropTypes.string,
   type: PropTypes.oneOf(['submit', 'button', 'reset']),
-  active: PropTypes.bool,
   disabled: PropTypes.bool,
+  isLoading: PropTypes.bool,
 };
 
 Button.defaultProps = {
   children: '',
   className: '',
   type: 'button',
-  active: true,
   disabled: false,
+  isLoading: false,
 };
 
 export default Button;
