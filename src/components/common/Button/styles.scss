@@ -1,3 +1,7 @@
 .btn-wrapper {
-  @apply flex justify-end mt-3;
+  @apply flex justify-end mt-3 flex-row;
+}
+
+button[disabled] {
+  background-color: #D1D5DB;
 }
