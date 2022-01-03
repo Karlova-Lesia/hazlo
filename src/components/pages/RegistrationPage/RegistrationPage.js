@@ -1,14 +1,16 @@
 import { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useAlert } from 'react-alert';
 import { registerUser } from '../../../api/auth';
+import MainContent from '../../common/MainContent';
+import Image from '../../common/Image';
 import AuthForm from '../../AuthForm';
 import Input from '../../common/Input';
+import AuthFormLink from '../../common/AuthFormLink';
 import Button from '../../common/Button';
 import ErrorAlert from '../../common/alerts/ErrorAlert/ErrorAlert';
-import { MAIN_PAGE } from '../../../constants/routes';
 import RegisterImage from '../../../assets/images/register.jpg';
-import './styles.scss';
+import { AUTHORIZATION_PAGE, MAIN_PAGE } from '../../../constants/routes';
 
 function RegistrationPage() {
   const [firstName, setFirstName] = useState('');
@@ -61,25 +63,17 @@ function RegistrationPage() {
   };
 
   return (
-    <main className="main-content-wrapper">
-      <h3 className="title">Registration</h3>
-      <div className="main-content">
-        <div className="image-wrapper">
-          <img src={RegisterImage} alt="Registration background" />
-        </div>
-        <AuthForm onSubmit={register}>
-          <Input label="First name" value={firstName} type="text" placeholder="First name" onChange={onFirstNameChange} />
-          <Input label="Last name" value={lastName} type="text" placeholder="Last name" onChange={onLastNameChange} />
-          <Input label="Email" value={email} type="email" placeholder="Email" onChange={onEmailChange} />
-          <Input label="Password" value={password} type="password" placeholder="Password" onChange={onPasswordChange} />
-          <div className="link-wrapper">
-            <span className="pr-2">Already registered?</span>
-            <Link to="/login" className="link">Log in</Link>
-          </div>
-          <Button className="btn bg-mint" type="submit" disabled={isLoading} isLoading={isLoading}>Register</Button>
-        </AuthForm>
-      </div>
-    </main>
+    <MainContent title="Registration">
+      <Image source={RegisterImage} altText="Registration background" />
+      <AuthForm onSubmit={register}>
+        <Input label="First name" value={firstName} type="text" placeholder="First name" onChange={onFirstNameChange} />
+        <Input label="Last name" value={lastName} type="text" placeholder="Last name" onChange={onLastNameChange} />
+        <Input label="Email" value={email} type="email" placeholder="Email" onChange={onEmailChange} />
+        <Input label="Password" value={password} type="password" placeholder="Password" onChange={onPasswordChange} />
+        <AuthFormLink text="Already registered?" path={AUTHORIZATION_PAGE} link="Log in" />
+        <Button type="submit" disabled={isLoading} isLoading={isLoading}>Register</Button>
+      </AuthForm>
+    </MainContent>
   );
 }
 
