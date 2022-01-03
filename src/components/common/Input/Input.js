@@ -5,14 +5,16 @@ function Input(props) {
   const {
     label,
     type,
+    value,
     placeholder,
+    onChange,
   } = props;
 
   return (
     <div>
       <label className="label">
         {label}
-        <input className="input" type={type} placeholder={placeholder} />
+        <input className="input" value={value} type={type} placeholder={placeholder} onChange={onChange} />
       </label>
     </div>
   );
@@ -21,13 +23,17 @@ function Input(props) {
 Input.propTypes = {
   label: PropTypes.string,
   type: PropTypes.string,
+  value: PropTypes.string,
   placeholder: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 Input.defaultProps = {
   label: '',
   type: '',
+  value: '',
   placeholder: '',
+  onChange: () => {},
 };
 
 export default Input;

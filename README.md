@@ -1,20 +1,20 @@
 # Hazlo
 
-####An application for monitoring the doing of tasks, by dividing the project into tasks,setting the score for each task and the doing status. The user must register or log in,after which he has the opportunity to view their projects or add a project and divide it into tasks. The user also has the ability to assess and manipulate the status of each task.
+An application for monitoring the doing of tasks, by dividing the project into tasks,setting the score for each task and the doing status. The user must register or log in,after which he has the opportunity to view their projects or add a project and divide it into tasks. The user also has the ability to assess and manipulate the status of each task.
 
 ##Tech stack:
 
-**React**
+- **React**
 
-**Redux**
+- **Redux**
 
-**json-server**
+- **json-server**
 
-**Tailwind CSS**
+- **Tailwind CSS**
 
-**Formik**
+- **Formik**
 
-**Joi**
+- **Joi**
 
 ## Available Scripts
 
@@ -52,3 +52,10 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+###Server start
+
+`json-server db.json -m ./node_modules/json-server-auth --port 3001`
+
+
+### _For_ _the_ _correct_ _work_ _when_ _starting_ _the_ _server,_ _follow_ _the_ _command_ _name_ `cp db.example.json db.json`.

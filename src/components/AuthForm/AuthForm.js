@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-function AuthForm({ children }) {
+function AuthForm({ children, onSubmit }) {
   return (
-    <form className="auth-form" method="post">
+    <form className="auth-form" method="post" onSubmit={onSubmit}>
       <div className="px-4">
         {children}
       </div>
@@ -12,11 +12,13 @@ function AuthForm({ children }) {
 }
 
 AuthForm.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.array,
+  onSubmit: PropTypes.func,
 };
 
 AuthForm.defaultProps = {
-  children: '',
+  children: [],
+  onSubmit: () => {},
 };
 
 export default AuthForm;

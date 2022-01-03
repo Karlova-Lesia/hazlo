@@ -19,6 +19,9 @@ module.exports = {
         h1: '48px',
         h3: '36px',
       },
+      borderColor: {
+        lightgrey: '#8D9597',
+      },
     },
   },
   plugins: [],
