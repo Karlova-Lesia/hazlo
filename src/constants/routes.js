@@ -1,2 +1,5 @@
-export const REGISTRATION_PAGE = '/register';
-export const MAIN_PAGE = '/';
+const MAIN_PAGE = '/';
+const REGISTRATION_PAGE = '/register';
+const AUTHORIZATION_PAGE = '/login';
+
+export { MAIN_PAGE, REGISTRATION_PAGE, AUTHORIZATION_PAGE };
