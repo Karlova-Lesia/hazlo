@@ -3,6 +3,9 @@
 }
 
 .input {
-  @apply text-base font-ptm uppercase w-full h-16 bg-gray-200 text-gray-700 border-none py-3 px-4 mb-8
+  @apply text-base font-ptm w-full h-16 bg-gray-200 text-gray-700 border-none py-3 px-4 mb-8
   focus:outline-lightgrey hover:bg-gray-300 focus:bg-white;
+}
+.input::placeholder {
+  @apply uppercase;
 }
