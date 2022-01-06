@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { useAlert } from 'react-alert';
+import { setUserData } from '../../../store/userSlice';
 import { registerUser } from '../../../api/auth';
 import MainContent from '../../common/MainContent';
 import Image from '../../common/Image';
@@ -18,6 +20,8 @@ function RegistrationPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+
+  const dispatch = useDispatch();
 
   const history = useHistory();
 
@@ -50,8 +54,11 @@ function RegistrationPage() {
 
     registerUser({
       firstName, lastName, email, password,
-    }).then(({ accessToken }) => {
-      localStorage.setItem('token', accessToken);
+    }).then(({ accessToken, user }) => {
+      dispatch(setUserData({
+        token: accessToken,
+        ...user,
+      }));
       history.push(MAIN_PAGE);
     })
       .catch((error) => show(
