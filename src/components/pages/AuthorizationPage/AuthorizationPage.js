@@ -64,7 +64,7 @@ function AuthorizationPage() {
         <Input label="Email" value={email} type="email" placeholder="Email" onChange={onEmailChange} />
         <Input label="Password" value={password} type="password" placeholder="Password" onChange={onPasswordChange} />
         <AuthFormLink text="Not registered yet?" path={REGISTRATION_PAGE} link="Register" />
-        <Button type="submit" disabled={isLoading} isLoading={isLoading}>Log in</Button>
+        <Button wrapperClasses="auth-btn-wrapper" type="submit" disabled={isLoading} isLoading={isLoading}>Log in</Button>
       </AuthForm>
     </MainContent>
   );

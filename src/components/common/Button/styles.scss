@@ -1,9 +1,9 @@
 .btn-wrapper {
-  @apply flex justify-end mt-3 flex-row;
+  @apply flex justify-center m-10 flex-row;
 }
 
-.btn {
-  @apply font-ptm w-36 text-white py-2 px-4 flex justify-around;
+.auth-btn-wrapper {
+  @apply flex justify-end mt-3 flex-row;
 }
 
 button[disabled] {

@@ -14,7 +14,13 @@ function Input(props) {
     <div>
       <label className="label">
         {label}
-        <input className="input" value={value} type={type} placeholder={placeholder} onChange={onChange} />
+        <input
+          className="input"
+          value={value}
+          type={type}
+          placeholder={placeholder}
+          onChange={onChange}
+        />
       </label>
     </div>
   );
