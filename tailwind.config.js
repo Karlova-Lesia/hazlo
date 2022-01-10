@@ -10,6 +10,8 @@ module.exports = {
       },
       backgroundColor: {
         mint: '#1e8a8a',
+        lightgrey: '#8D9597',
+        middlegrey: '#E6E6E6',
       },
       colors: {
         mint: '#1e8a8a',
