@@ -1,0 +1,16 @@
+.project-item {
+  @apply flex flex-row m-3;
+
+  &-title {
+    @apply flex text-lightgrey h-16 font-ptm bg-white w-full items-center pl-7 uppercase;
+  }
+
+}
+
+.btn-group {
+  @apply flex bg-white items-center justify-end;
+}
+
+.btn-group button {
+  @apply pr-10;
+}
