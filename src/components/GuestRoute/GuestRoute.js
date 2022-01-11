@@ -1,15 +1,18 @@
-import { Route, useHistory } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
+import { MAIN_PAGE } from '../../constants/routes';
 
 function GuestRoute({ component: Component, ...options }) {
   const { token } = useSelector(({ user }) => user);
-  const history = useHistory();
-
-  if (token) history.goBack();
 
   return (
-    <Route {...options} component={Component} />
+    <Route
+      {...options}
+      render={(props) => (!token
+        ? <Component {...props} />
+        : <Redirect to={MAIN_PAGE} />)}
+    />
   );
 }
 

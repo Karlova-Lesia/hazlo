@@ -27,7 +27,7 @@ function Button(props) {
 
 Button.propTypes = {
   wrapperClasses: PropTypes.string,
-  children: PropTypes.array,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   type: PropTypes.oneOf(['submit', 'button', 'reset']),
   disabled: PropTypes.bool,
   isLoading: PropTypes.bool,
@@ -35,7 +35,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   wrapperClasses: 'btn-wrapper',
-  children: [],
+  children: '',
   type: 'button',
   disabled: false,
   isLoading: false,
