@@ -17,11 +17,11 @@ function ProtectedRoute({ component: Component, ...options }) {
 }
 
 ProtectedRoute.propTypes = {
-  component: PropTypes.node,
+  component: PropTypes.func,
 };
 
 ProtectedRoute.defaultProps = {
-  component: null,
+  component: () => {},
 };
 
 export default ProtectedRoute;

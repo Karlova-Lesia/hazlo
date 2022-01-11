@@ -18,9 +18,9 @@ function App() {
       <Header />
       <Router>
         <Switch>
-          <GuestRoute path={REGISTRATION_PAGE} component={RegistrationPage} />
-          <GuestRoute path={AUTHORIZATION_PAGE} component={AuthorizationPage} />
-          <ProtectedRoute exacte path={MAIN_PAGE} component={ProjectsPage} />
+          <ProtectedRoute exact path={MAIN_PAGE} component={ProjectsPage} />
+          <GuestRoute exact path={REGISTRATION_PAGE} component={RegistrationPage} />
+          <GuestRoute exact path={AUTHORIZATION_PAGE} component={AuthorizationPage} />
         </Switch>
       </Router>
     </AlertProvider>
