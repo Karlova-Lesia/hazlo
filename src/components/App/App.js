@@ -15,8 +15,8 @@ import { MAIN_PAGE, REGISTRATION_PAGE, AUTHORIZATION_PAGE } from '../../constant
 function App() {
   return (
     <AlertProvider template={AlertTemplate} {...options}>
-      <Header />
       <Router>
+        <Header />
         <Switch>
           <ProtectedRoute exact path={MAIN_PAGE} component={ProjectsPage} />
           <GuestRoute exact path={REGISTRATION_PAGE} component={RegistrationPage} />
