@@ -1,3 +1,7 @@
 .projects-block-wrapper {
   @apply flex flex-col w-full bg-middlegrey justify-center pt-10 shadow-2xl;
 }
+
+.text {
+  @apply flex justify-center text-lightgrey font-ptm uppercase;
+}

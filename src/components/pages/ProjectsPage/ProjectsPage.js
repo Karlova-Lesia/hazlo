@@ -17,7 +17,9 @@ function ProjectsPage() {
   return (
     <MainContent title="Projects">
       <div className="projects-block-wrapper">
-        <ProjectsList projects={projects} />
+        {(projects.length)
+          ? <ProjectsList projects={projects} />
+          : <span className="text">No projects yet</span>}
         <Button>
           <CreateProjectIcon />
           Create
