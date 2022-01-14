@@ -24,6 +24,9 @@ module.exports = {
       borderColor: {
         lightgrey: '#8D9597',
       },
+      width: {
+        400: '400px',
+      },
     },
   },
   plugins: [],

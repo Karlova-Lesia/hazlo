@@ -1,45 +1,45 @@
 import PropTypes from 'prop-types';
+import { Field } from 'formik';
 import './styles.scss';
 
-function Input(props) {
+const Input = (props) => {
   const {
     label,
     type,
-    value,
+    name,
     placeholder,
-    onChange,
   } = props;
 
   return (
-    <div>
-      <label className="label">
-        {label}
-        <input
-          className="input"
-          value={value}
-          type={type}
-          placeholder={placeholder}
-          onChange={onChange}
-        />
-      </label>
-    </div>
+    <Field name={name}>
+      {({
+        field,
+        meta,
+      }) => (
+        <div className="mb-5">
+          <label className="label">{label}</label>
+          <input className="input" type={type} placeholder={placeholder} {...field} />
+          {meta.touched && meta.error && (
+            <span className="error-message">{meta.error}</span>
+          )}
+        </div>
+      )}
+    </Field>
   );
-}
+};
 
 Input.propTypes = {
   label: PropTypes.string,
   type: PropTypes.string,
-  value: PropTypes.string,
+  name: PropTypes.string,
   placeholder: PropTypes.string,
-  onChange: PropTypes.func,
 };
 
 Input.defaultProps = {
   label: '',
   type: '',
-  value: '',
+  name: '',
   placeholder: '',
-  onChange: () => {},
 };
 
 export default Input;

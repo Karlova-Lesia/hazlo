@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useAlert } from 'react-alert';
+import { Formik, Form } from 'formik';
+import { authorizationValidationScheme } from '../../../schemas/authSchemas';
 import { setUserData } from '../../../store/userSlice';
 import { authUser } from '../../../api/auth';
 import MainContent from '../../common/MainContent';
 import Image from '../../common/Image';
-import AuthForm from '../../AuthForm';
 import Input from '../../common/Input';
 import AuthFormLink from '../../common/AuthFormLink';
 import Button from '../../common/Button';
@@ -15,8 +16,6 @@ import AuthImage from '../../../assets/images/auth.jpg';
 import { MAIN_PAGE, REGISTRATION_PAGE } from '../../../constants/routes';
 
 function AuthorizationPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const dispatch = useDispatch();
@@ -25,47 +24,50 @@ function AuthorizationPage() {
 
   const { show } = useAlert();
 
-  const onEmailChange = (event) => {
-    const { value } = event.target;
-    setEmail(value);
-  };
-
-  const onPasswordChange = (event) => {
-    const { value } = event.target;
-    setPassword(value);
-  };
-
-  const auth = (event) => {
-    event.preventDefault();
-
+  const handleAuth = ({ email, password }) => {
     setIsLoading(true);
 
-    authUser({
-      email, password,
-    }).then(({ accessToken, user }) => {
+    authUser({ email, password }).then(({ accessToken, user }) => {
+      setIsLoading(false);
+
       dispatch(setUserData({
         token: accessToken,
         ...user,
       }));
+
       history.push(MAIN_PAGE);
     })
-      .catch((error) => show(
-        <ErrorAlert>
-          {error.response.data}
-        </ErrorAlert>,
-      ))
-      .finally(() => setIsLoading(false));
+      .catch((error) => {
+        setIsLoading(false);
+
+        return show(
+          <ErrorAlert>
+            {error.response.data}
+          </ErrorAlert>,
+        );
+      });
   };
 
   return (
     <MainContent title="Authorization">
       <Image source={AuthImage} altText="Authorization background" />
-      <AuthForm onSubmit={auth}>
-        <Input label="Email" value={email} type="email" placeholder="Email" onChange={onEmailChange} />
-        <Input label="Password" value={password} type="password" placeholder="Password" onChange={onPasswordChange} />
-        <AuthFormLink text="Not registered yet?" path={REGISTRATION_PAGE} link="Register" />
-        <Button wrapperClasses="auth-btn-wrapper" type="submit" disabled={isLoading} isLoading={isLoading}>Log in</Button>
-      </AuthForm>
+      <Formik
+        initialValues={{
+          email: '',
+          password: '',
+        }}
+        validationSchema={authorizationValidationScheme}
+        onSubmit={handleAuth}
+      >
+        <Form className="w-400">
+          <div>
+            <Input label="Email" type="email" name="email" placeholder="Email" />
+            <Input label="Password" type="password" name="password" placeholder="Password" />
+            <AuthFormLink text="Not registered yet?" path={REGISTRATION_PAGE} link="Register" />
+            <Button wrapperClasses="auth-btn-wrapper" type="submit" disabled={isLoading} isLoading={isLoading}>Log in</Button>
+          </div>
+        </Form>
+      </Formik>
     </MainContent>
   );
 }

@@ -3,10 +3,14 @@
 }
 
 .input {
-  @apply text-lightgrey font-ptm w-full h-16 bg-gray-300 border-none py-3 px-4 mb-8
-  outline-0 hover:bg-gray-100 focus:bg-white;
+  @apply text-lightgrey font-ptm w-full h-16 bg-gray-300 py-3 px-4
+  outline-gray-400 hover:bg-gray-100 focus:bg-white;
 }
 
 .input::placeholder {
   @apply uppercase;
+}
+
+.error-message {
+  @apply w-full text-red-400 font-ptm;
 }
