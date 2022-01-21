@@ -9,6 +9,7 @@ function Button(props) {
     type,
     disabled,
     isLoading,
+    onClick,
   } = props;
 
   return (
@@ -17,6 +18,7 @@ function Button(props) {
         className="font-ptm w-36 text-white py-2 px-4 flex justify-around items-center bg-mint"
         type={type}
         disabled={disabled}
+        onClick={onClick}
       >
         {children}
         {isLoading && <Loader type="TailSpin" color="lightgrey" height="20px" width="20px" radius={3} arialLabel="loading-indicator" />}
@@ -31,6 +33,7 @@ Button.propTypes = {
   type: PropTypes.oneOf(['submit', 'button', 'reset']),
   disabled: PropTypes.bool,
   isLoading: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
@@ -39,6 +42,7 @@ Button.defaultProps = {
   type: 'button',
   disabled: false,
   isLoading: false,
+  onClick: () => {},
 };
 
 export default Button;

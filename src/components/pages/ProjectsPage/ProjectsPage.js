@@ -4,7 +4,7 @@ import { getProjects } from '../../../api/projects';
 import MainContent from '../../common/MainContent';
 import ProjectsList from '../../ProjectsList';
 import Button from '../../common/Button';
-import CreateProjectIcon from '../../../icons/CreateProjectIcon';
+import CreateProjectIcon from '../../icons/CreateProjectIcon';
 import './styles.scss';
 
 function ProjectsPage() {

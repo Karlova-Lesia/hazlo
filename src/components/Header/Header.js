@@ -2,7 +2,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { AUTHORIZATION_PAGE } from '../../constants/routes';
 import { setUserData } from '../../store/userSlice';
-import LogOutIcon from '../../icons/LogOutIcon';
+import LogOutIcon from '../icons/LogOutIcon';
 import './styles.scss';
 
 function Header() {
