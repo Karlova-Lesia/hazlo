@@ -1,0 +1,28 @@
+.react-kanban-board {
+  @apply flex flex-col items-center w-full items-center overflow-hidden;
+}
+
+.react-kanban-column {
+  width: 295px;
+  @apply flex items-stretch bg-middlegrey pt-10 shadow-xl;
+}
+
+.react-kanban-card {
+  @apply flex bg-white ml-2;
+}
+
+.react-kanban-card__title {
+  @apply flex items-center pl-5 pb-0 text-lightgrey font-ptm border-none h-14;
+}
+
+.react-kanban-card--dragging {
+  @apply shadow-none;
+}
+
+.card-title {
+  @apply flex justify-center text-mint uppercase mb-5;
+}
+
+.column-btn {
+  @apply flex justify-center mt-4 mb-4 border border-gray-300 hover:bg-gray-300 p-1 w-full;
+}
