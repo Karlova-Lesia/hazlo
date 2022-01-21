@@ -1,12 +1,18 @@
 import PropTypes from 'prop-types';
-import EditProjectIcon from '../../icons/EditProjectIcon';
-import DeleteProjectIcon from '../../icons/DeleteProjectIcon';
+import { Link } from 'react-router-dom';
+import EditProjectIcon from '../icons/EditProjectIcon';
+import DeleteProjectIcon from '../icons/DeleteProjectIcon';
+import { PROJECTS_ROUTE } from '../../constants/routes';
 import './styles.scss';
 
-function ProjectItem({ title }) {
+function ProjectItem({ id, title }) {
   return (
     <li className="project-item">
-      <h4 className="project-item-title">{ title }</h4>
+      <div className="project-item-title">
+        <Link to={`${PROJECTS_ROUTE}/${id}`}>
+          <h4>{title}</h4>
+        </Link>
+      </div>
       <div className="btn-group">
         <button>
           <EditProjectIcon />
@@ -20,10 +26,12 @@ function ProjectItem({ title }) {
 }
 
 ProjectItem.propTypes = {
+  id: PropTypes.string,
   title: PropTypes.string,
 };
 
 ProjectItem.defaultProps = {
+  id: 0,
   title: '',
 };
 

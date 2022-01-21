@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Alert from '../Alert';
-import ErrorIcon from '../../../../icons/ErrorIcon';
+import ErrorIcon from '../../../icons/ErrorIcon';
 
 function ErrorAlert({ children }) {
   return (
