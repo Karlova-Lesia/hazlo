@@ -1,0 +1,11 @@
+.modal-wrapper {
+  @apply fixed flex justify-center top-0 w-full h-full;
+  background-color: rgba(0, 0, 0, 0.5);;
+}
+.modal {
+  @apply fixed flex flex-col top-16 bg-white w-2/5 h-650;
+}
+
+.modal-header {
+  @apply flex justify-between text-h5 text-mint font-mmd items-baseline mt-6 ml-12 mr-12 mb-4;
+}
