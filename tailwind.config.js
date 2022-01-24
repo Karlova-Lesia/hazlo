@@ -20,12 +20,17 @@ module.exports = {
       fontSize: {
         h1: '48px',
         h3: '36px',
+        h5: '24px',
       },
       borderColor: {
         lightgrey: '#8D9597',
       },
       width: {
         400: '400px',
+      },
+      height: {
+        240: '240px',
+        650: '650px',
       },
     },
   },
