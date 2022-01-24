@@ -26,7 +26,7 @@ function ProjectItem({ id, title }) {
 }
 
 ProjectItem.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.number,
   title: PropTypes.string,
 };
 
