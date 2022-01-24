@@ -5,4 +5,6 @@ const getProjects = ({ userId }) => axiosInstance.get(`${PROJECTS_URL}?userId=${
 
 const getProject = ({ id }) => axiosInstance.get(`${PROJECTS_URL}/${id}`);
 
-export { getProjects, getProject };
+const createProject = (projectData) => axiosInstance.post(PROJECTS_URL, projectData);
+
+export { getProjects, getProject, createProject };
