@@ -17,11 +17,14 @@ function Button(props) {
       <button
         className="font-ptm w-36 text-white py-2 px-4 flex justify-around items-center bg-mint"
         type={type}
-        disabled={disabled}
+        disabled={disabled || isLoading}
         onClick={onClick}
       >
         {children}
-        {isLoading && <Loader type="TailSpin" color="lightgrey" height="20px" width="20px" radius={3} arialLabel="loading-indicator" />}
+        {
+          isLoading
+            && <Loader type="TailSpin" color="lightgrey" height="20px" width="20px" radius={3} arialLabel="loading-indicator" />
+        }
       </button>
     </div>
   );

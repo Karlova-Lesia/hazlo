@@ -2,10 +2,8 @@ import PropTypes from 'prop-types';
 import { Field } from 'formik';
 import './styles.scss';
 
-const Input = (props) => {
+const Textarea = (props) => {
   const {
-    labelValue,
-    type,
     name,
     placeholder,
   } = props;
@@ -16,9 +14,8 @@ const Input = (props) => {
         field,
         meta,
       }) => (
-        <div className="input-wrapper">
-          <label className="label">{labelValue}</label>
-          <input className="input" type={type} placeholder={placeholder} {...field} />
+        <div className="textarea-wrapper">
+          <textarea className="textarea" placeholder={placeholder} {...field} />
           {meta.touched && meta.error && (
             <span className="error-message">{meta.error}</span>
           )}
@@ -28,18 +25,14 @@ const Input = (props) => {
   );
 };
 
-Input.propTypes = {
-  labelValue: PropTypes.string,
-  type: PropTypes.string,
+Textarea.propTypes = {
   name: PropTypes.string,
   placeholder: PropTypes.string,
 };
 
-Input.defaultProps = {
-  labelValue: '',
-  type: '',
+Textarea.defaultProps = {
   name: '',
   placeholder: '',
 };
 
-export default Input;
+export default Textarea;
