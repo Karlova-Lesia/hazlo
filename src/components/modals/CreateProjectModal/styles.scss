@@ -1,0 +1,19 @@
+.modal-form {
+  @apply flex flex-col m-3;
+}
+
+.label-wrapper {
+  @apply flex justify-between mt-2 ml-8 mr-8 items-baseline -mb-2;
+}
+
+.label {
+  @apply font-ptm text-lightgrey text-base;
+}
+
+.modal-btn-group button {
+  @apply p-2;
+}
+
+.modal-btn-wrapper {
+  @apply flex justify-end flex-row mt-4 mr-8;
+}
