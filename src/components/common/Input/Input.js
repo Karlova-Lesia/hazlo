@@ -4,7 +4,7 @@ import './styles.scss';
 
 const Input = (props) => {
   const {
-    label,
+    labelValue,
     type,
     name,
     placeholder,
@@ -16,8 +16,8 @@ const Input = (props) => {
         field,
         meta,
       }) => (
-        <div className="mb-5">
-          <label className="label">{label}</label>
+        <div className="input-wrapper">
+          <label className="label">{labelValue}</label>
           <input className="input" type={type} placeholder={placeholder} {...field} />
           {meta.touched && meta.error && (
             <span className="error-message">{meta.error}</span>
@@ -29,14 +29,14 @@ const Input = (props) => {
 };
 
 Input.propTypes = {
-  label: PropTypes.string,
+  labelValue: PropTypes.string,
   type: PropTypes.string,
   name: PropTypes.string,
   placeholder: PropTypes.string,
 };
 
 Input.defaultProps = {
-  label: '',
+  labelValue: '',
   type: '',
   name: '',
   placeholder: '',
