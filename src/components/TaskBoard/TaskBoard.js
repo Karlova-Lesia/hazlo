@@ -2,8 +2,9 @@ import Board from '@asseinfo/react-kanban';
 import '@asseinfo/react-kanban/dist/styles.css';
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { editTask, getTasks } from '../../api/tasks';
+import { createTask, editTask, getTasks } from '../../api/tasks';
 import groupTasks from '../../helpers/tasks';
+import CreateTaskModal from '../modals/CreateTaskModal';
 import CreateTaskIcon from '../icons/CreateTaskIcon';
 import './styles.scss';
 
@@ -27,9 +28,17 @@ const initialBoard = {
   ],
 };
 
+const initialCreateTaskModal = {
+  isOpen: false,
+  isLoading: false,
+  columnId: null,
+  addCard: () => {},
+};
+
 function TaskBoard({ projectId }) {
   const [board, setBoard] = useState(initialBoard);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [createTaskModal, setCreateTaskModal] = useState(initialCreateTaskModal);
 
   useEffect(() => {
     getTasks(projectId).then((tasks) => {
@@ -44,6 +53,40 @@ function TaskBoard({ projectId }) {
     }).finally(() => setIsLoaded(true));
   }, []);
 
+  const openCreateTaskModal = (id, addCard) => {
+    setCreateTaskModal({
+      isOpen: true,
+      columnId: id,
+      addCard,
+    });
+  };
+
+  const closeCreateTaskModal = () => {
+    setCreateTaskModal(initialCreateTaskModal);
+  };
+
+  const onCreateTask = (task) => {
+    const newTask = {
+      ...task,
+      projectId,
+      columnId: createTaskModal.columnId,
+    };
+
+    setCreateTaskModal((prevState) => ({
+      ...prevState,
+      isLoading: true,
+    }));
+
+    createTask(newTask)
+      .then(({ id }) => {
+        createTaskModal.addCard({
+          ...newTask,
+          id,
+        });
+      })
+      .finally(closeCreateTaskModal);
+  };
+
   const handleCardMove = (_board, card, from, destination) => {
     editTask(card.id, {
       ...card,
@@ -51,7 +94,7 @@ function TaskBoard({ projectId }) {
     });
   };
 
-  const renderColumnHeader = ({ title }, { addCard }) => (
+  const renderColumnHeader = ({ id, title }, { addCard }) => (
     <>
       <div className="card-title">
         {title}
@@ -60,7 +103,7 @@ function TaskBoard({ projectId }) {
       <button
         className="column-btn"
         type="button"
-        onClick={() => addCard({ id: 99, title: 'New Card' })}
+        onClick={() => openCreateTaskModal(id, addCard)}
       >
         <CreateTaskIcon />
       </button>
@@ -68,13 +111,22 @@ function TaskBoard({ projectId }) {
   );
 
   return isLoaded && (
+  <>
     <Board
       initialBoard={board}
       allowAddCard={{ on: 'top' }}
-      onCardNew={console.log}
+      onCardNew={() => {}}
       onCardDragEnd={handleCardMove}
       renderColumnHeader={renderColumnHeader}
     />
+    {createTaskModal.isOpen && (
+      <CreateTaskModal
+        onClose={closeCreateTaskModal}
+        onCreate={onCreateTask}
+        isLoading={createTaskModal.isLoading}
+      />
+    )}
+  </>
   );
 }
 

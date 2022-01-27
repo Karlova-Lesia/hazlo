@@ -1,8 +1,5 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
 import { Formik, Form } from 'formik';
-import { createProject } from '../../../api/projects';
 import Modal from '../Modal';
 import Input from '../../common/Input';
 import Textarea from '../../common/Textarea';
@@ -13,51 +10,41 @@ import FontIcon from '../../icons/FontIcon';
 import FontWeightIcon from '../../icons/FontWeightIcon';
 import FontItalicIcon from '../../icons/FontItalicIcon';
 import FontColorIcon from '../../icons/FontColorIcon';
-import { createProjectValidationScheme } from '../../../schemas/projectSchema';
+import { createTaskValidationScheme } from '../../../schemas/taskSchema';
 import './styles.scss';
 
-function CreateProjectModal({ onClose, onCreate }) {
-  const [isLoading, setIsLoading] = useState(false);
-
-  const { id: userId } = useSelector(({ user }) => user);
-
-  const createNewProject = ({ title, description }) => {
-    setIsLoading(true);
-
-    createProject({ userId, title, description }).then(({ id }) => {
-      setIsLoading(false);
-      onCreate({
-        id, title, description, userId,
-      });
-      onClose();
-    });
-  };
+function CreateTaskModal({ onClose, onCreate, isLoading }) {
+  const renderHeader = () => (
+    <>
+      <h1>
+        Create
+        <br />
+        Project
+      </h1>
+      <button onClick={onClose}>
+        <CloseModalIcon />
+      </button>
+    </>
+  );
 
   return (
-    <Modal
-      headerChildren={(
-        <>
-          <h1>
-            Create
-            <br />
-            Project
-          </h1>
-          <button onClick={onClose}>
-            <CloseModalIcon />
-          </button>
-        </>
-      )}
-    >
+    <Modal headerChildren={renderHeader}>
       <Formik
         initialValues={{
           title: '',
+          estimate: 0,
           description: '',
         }}
-        validationSchema={createProjectValidationScheme}
-        onSubmit={createNewProject}
+        validationSchema={createTaskValidationScheme}
+        onSubmit={onCreate}
       >
         <Form className="modal-form">
-          <Input labelValue="Name" type="text" name="title" placeholder="Name" />
+          <div className="input-group">
+            <div className="w-3/5">
+              <Input labelValue="Name" type="text" name="title" placeholder="Name" />
+            </div>
+            <Input labelValue="Estimate(m)" type="number" name="estimate" placeholder="Estimate" />
+          </div>
           <div className="label-wrapper">
             <label className="label">Description</label>
             <div className="modal-btn-group">
@@ -86,14 +73,16 @@ function CreateProjectModal({ onClose, onCreate }) {
   );
 }
 
-CreateProjectModal.propTypes = {
+CreateTaskModal.propTypes = {
   onClose: PropTypes.func,
   onCreate: PropTypes.func,
+  isLoading: PropTypes.bool,
 };
 
-CreateProjectModal.defaultProps = {
+CreateTaskModal.defaultProps = {
   onClose: () => {},
   onCreate: () => {},
+  isLoading: false,
 };
 
-export default CreateProjectModal;
+export default CreateTaskModal;
