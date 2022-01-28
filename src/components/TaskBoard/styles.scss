@@ -7,18 +7,6 @@
   @apply flex items-stretch bg-middlegrey pt-10 shadow-xl;
 }
 
-.react-kanban-card {
-  @apply flex bg-white ml-2;
-}
-
-.react-kanban-card__title {
-  @apply flex items-center pl-5 pb-0 text-lightgrey font-ptm border-none h-14;
-}
-
-.react-kanban-card__description {
-  @apply block hidden;
-}
-
 .react-kanban-card--dragging {
   @apply shadow-none;
 }
