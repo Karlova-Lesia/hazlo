@@ -2,11 +2,15 @@ import Board from '@asseinfo/react-kanban';
 import '@asseinfo/react-kanban/dist/styles.css';
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { createTask, editTask, getTasks } from '../../api/tasks';
+import {
+  createTask, editTask, getTasks,
+} from '../../api/tasks';
 import groupTasks from '../../helpers/tasks';
 import CreateTaskModal from '../modals/CreateTaskModal';
 import CreateTaskIcon from '../icons/CreateTaskIcon';
 import './styles.scss';
+import TaskItem from '../TaskItem';
+import ShowTaskModal from '../modals/ShowTaskModal';
 
 const initialBoard = {
   columns: [
@@ -35,10 +39,16 @@ const initialCreateTaskModal = {
   addCard: () => {},
 };
 
+const initialShowTaskModal = {
+  isOpen: false,
+  task: {},
+};
+
 function TaskBoard({ projectId }) {
   const [board, setBoard] = useState(initialBoard);
   const [isLoaded, setIsLoaded] = useState(false);
   const [createTaskModal, setCreateTaskModal] = useState(initialCreateTaskModal);
+  const [showTaskModal, setShowTaskModal] = useState(initialShowTaskModal);
 
   useEffect(() => {
     getTasks(projectId).then((tasks) => {
@@ -65,6 +75,10 @@ function TaskBoard({ projectId }) {
     setCreateTaskModal(initialCreateTaskModal);
   };
 
+  const closeShowTaskModal = () => {
+    setShowTaskModal(initialShowTaskModal);
+  };
+
   const onCreateTask = (task) => {
     const newTask = {
       ...task,
@@ -85,6 +99,12 @@ function TaskBoard({ projectId }) {
         });
       })
       .finally(closeCreateTaskModal);
+  };
+  const onShowTask = (task) => {
+    setShowTaskModal({
+      isOpen: true,
+      task,
+    });
   };
 
   const handleCardMove = (_board, card, from, destination) => {
@@ -110,6 +130,35 @@ function TaskBoard({ projectId }) {
     </>
   );
 
+  const renderShowTaskModal = () => {
+    if (!showTaskModal.isOpen) return null;
+
+    const { title, description, estimate } = showTaskModal.task;
+
+    return (
+      <ShowTaskModal
+        onClose={closeShowTaskModal}
+        title={title}
+        description={description}
+        estimate={estimate}
+      />
+    );
+  };
+
+  const renderCard = ({
+    id, title, description, estimate,
+  }, { dragging }) => (
+    <TaskItem
+      dragging={dragging}
+      title={title}
+      onShow={() => {
+        onShowTask({
+          id, title, description, estimate,
+        });
+      }}
+    />
+  );
+
   return isLoaded && (
   <>
     <Board
@@ -118,6 +167,7 @@ function TaskBoard({ projectId }) {
       onCardNew={() => {}}
       onCardDragEnd={handleCardMove}
       renderColumnHeader={renderColumnHeader}
+      renderCard={renderCard}
     />
     {createTaskModal.isOpen && (
       <CreateTaskModal
@@ -126,6 +176,7 @@ function TaskBoard({ projectId }) {
         isLoading={createTaskModal.isLoading}
       />
     )}
+    {renderShowTaskModal()}
   </>
   );
 }
