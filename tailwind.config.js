@@ -26,10 +26,12 @@ module.exports = {
         lightgrey: '#8D9597',
       },
       width: {
+        240: '240px',
         400: '400px',
       },
       height: {
         240: '240px',
+        300: '300px',
         680: '680px',
       },
     },
