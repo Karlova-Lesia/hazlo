@@ -1,0 +1,16 @@
+.task-item {
+  @apply flex flex-row m-3 w-240;
+
+  &-title {
+    @apply flex text-lightgrey h-16 font-ptm bg-white w-full items-center pl-7 uppercase w-3/5;
+  }
+
+}
+
+.task-btn-group {
+  @apply flex bg-white items-center align-middle justify-end w-2/5;
+}
+
+.task-btn-group button {
+  @apply pr-5;
+}
