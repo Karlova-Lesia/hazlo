@@ -14,7 +14,7 @@ import { createTaskValidationScheme } from '../../../schemas/taskSchema';
 import './styles.scss';
 
 function CreateTaskModal({ onClose, onCreate, isLoading }) {
-  const renderHeader = () => (
+  const renderChildren = () => (
     <>
       <h1>
         Create
@@ -28,7 +28,7 @@ function CreateTaskModal({ onClose, onCreate, isLoading }) {
   );
 
   return (
-    <Modal headerChildren={renderHeader}>
+    <Modal headerChildren={renderChildren()}>
       <Formik
         initialValues={{
           title: '',

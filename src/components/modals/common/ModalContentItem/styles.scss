@@ -1,3 +1,8 @@
-.label {
-  @apply font-ptm text-lightgrey text-base;
+.card-item {
+  @apply flex flex-col mt-3 ml-8 mr-8 mb-3;
+
+  &-label {
+    @apply font-ptm text-lightgrey text-base;
+  }
+
 }

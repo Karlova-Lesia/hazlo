@@ -1,38 +1,33 @@
 import PropTypes from 'prop-types';
 import Modal from '../Modal';
 import CloseModalIcon from '../../icons/CloseModalIcon';
-import './styles.scss';
 import ModalContentItem from '../common/ModalContentItem';
+import './styles.scss';
 
 function ShowTaskModal({
   title, description, estimate, onClose,
 }) {
+  const renderChildren = () => (
+    <>
+      <h1>
+        View
+        <br />
+        Task
+      </h1>
+      <button onClick={onClose}>
+        <CloseModalIcon />
+      </button>
+    </>
+  );
+
   return (
-    <Modal headerChildren={(
-      <>
-        <h1>
-          View
-          <br />
-          Task
-        </h1>
-        <button onClick={onClose}>
-          <CloseModalIcon />
-        </button>
-      </>
-    )}
-    >
-      <div className="content-wrapper">
-        <div className="item-group">
-          <div className="w-3/5 item-wrapper">
-            <ModalContentItem labelValue="Name" itemValue={title} className="input" />
-          </div>
-          <div className="w-2/5 item-wrapper">
-            <ModalContentItem labelValue="Estimate(m)" itemValue={estimate} className="input" />
-          </div>
+    <Modal headerChildren={renderChildren()}>
+      <div className="card">
+        <div className="card-item-group">
+          <ModalContentItem label="Name" itemValue={title} className="item-card-value-short" wrapperClass="w-3/5" />
+          <ModalContentItem label="Estimate(m)" itemValue={estimate} className="item-card-value-short" wrapperClass="w-2/5" />
         </div>
-        <div className="item-wrapper">
-          <ModalContentItem labelValue="Description" itemValue={description} className="textarea" />
-        </div>
+        <ModalContentItem label="Description" itemValue={description} className="item-card-value-long" />
       </div>
     </Modal>
   );
