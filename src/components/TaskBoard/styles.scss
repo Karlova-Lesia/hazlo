@@ -10,11 +10,3 @@
 .react-kanban-card--dragging {
   @apply shadow-none;
 }
-
-.card-title {
-  @apply flex justify-center text-mint uppercase mb-5;
-}
-
-.column-btn {
-  @apply flex justify-center mt-4 mb-4 border border-gray-300 hover:bg-gray-300 p-1 w-full;
-}

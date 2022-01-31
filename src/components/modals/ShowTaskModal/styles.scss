@@ -1,21 +1,18 @@
-.content-wrapper {
+.card {
   @apply flex flex-col m-3;
+
+  &-item-group {
+    @apply flex flex-row;
+  }
+
 }
 
-.item-wrapper {
-  @apply flex flex-col mt-3 ml-8 mr-8 mb-3;
+.item-card-value-short {
+  @apply flex items-center text-lightgrey font-ptm w-full bg-gray-300 py-3 px-4 h-16
+  outline-gray-400;
 }
 
-.item-group {
-  @apply flex flex-row;
-}
-
-.input {
-  @apply text-lightgrey font-ptm w-full h-16 bg-gray-300 py-3 px-4
-  outline-gray-400 hover:bg-gray-100 focus:bg-white;
-}
-
-.textarea {
-  @apply text-lightgrey font-ptm w-full h-300 bg-gray-300 py-3 px-4
-  outline-gray-400 hover:bg-gray-100 focus:bg-white resize-none;
+.item-card-value-long {
+  @apply flex items-center text-lightgrey font-ptm w-full bg-gray-300 py-3 px-4 h-300
+  outline-gray-400;
 }
