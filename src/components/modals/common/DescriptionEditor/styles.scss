@@ -1,0 +1,11 @@
+.label-wrapper {
+  @apply flex justify-between mt-2 ml-8 mr-8 items-baseline -mb-2;
+}
+
+.label {
+  @apply font-ptm text-lightgrey text-base;
+}
+
+.modal-btn-group button {
+  @apply p-2;
+}
