@@ -13,7 +13,7 @@ import FontIcon from '../../icons/FontIcon';
 import FontWeightIcon from '../../icons/FontWeightIcon';
 import FontItalicIcon from '../../icons/FontItalicIcon';
 import FontColorIcon from '../../icons/FontColorIcon';
-import { createProjectValidationScheme } from '../../../schemas/projectSchema';
+import { projectValidationScheme } from '../../../schemas/projectSchema';
 import './styles.scss';
 
 function CreateProjectModal({ onClose, onCreate }) {
@@ -53,7 +53,7 @@ function CreateProjectModal({ onClose, onCreate }) {
           title: '',
           description: '',
         }}
-        validationSchema={createProjectValidationScheme}
+        validationSchema={projectValidationScheme}
         onSubmit={createNewProject}
       >
         <Form className="modal-form">

@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 import { getMinSizeMessage, getRequiredMessage } from '../helpers/validationHelpers';
 
-export const createProjectValidationScheme = Yup.object({
+export const projectValidationScheme = Yup.object({
   title: Yup.string()
     .min(2, getMinSizeMessage('name', 2))
     .required(getRequiredMessage('name')),
