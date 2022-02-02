@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { getProjects } from '../../../api/projects';
+import { ProjectsPageContext } from '../../../contexts/projectsContext';
 import MainContent from '../../common/MainContent';
 import ProjectsList from '../../ProjectsList';
 import Button from '../../common/Button';
@@ -28,29 +29,37 @@ function ProjectsPage() {
     setProjects([...projects, project]);
   };
 
+  const onEditProject = (projectId, changedProject) => {
+    setProjects(projects.map((project) => (
+      projectId === project.id ? changedProject : project
+    )));
+  };
+
   return (
-    <div>
-      <MainContent title="Projects">
-        <div className="projects-block-wrapper">
-          {projects.length
-            ? <ProjectsList projects={projects} />
-            : <span className="text">No projects yet</span>}
-          <Button onClick={openCreateProjectModal}>
-            <CreateProjectIcon />
-            Create
-          </Button>
-        </div>
-      </MainContent>
-      {
-          isCreateProjectModalOpen
-          && (
-          <CreateProjectModal
-            onClose={closeCreateProjectModal}
-            onCreate={onCreateProject}
-          />
-          )
-      }
-    </div>
+    <ProjectsPageContext.Provider value={{ onEditProject }}>
+      <>
+        <MainContent title="Projects">
+          <div className="projects-block-wrapper">
+            {projects.length
+              ? <ProjectsList projects={projects} />
+              : <span className="text">No projects yet</span>}
+            <Button onClick={openCreateProjectModal}>
+              <CreateProjectIcon />
+              Create
+            </Button>
+          </div>
+        </MainContent>
+        {
+        isCreateProjectModalOpen
+        && (
+        <CreateProjectModal
+          onClose={closeCreateProjectModal}
+          onCreate={onCreateProject}
+        />
+        )
+    }
+      </>
+    </ProjectsPageContext.Provider>
   );
 }
 
