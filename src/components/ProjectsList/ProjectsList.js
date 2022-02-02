@@ -5,7 +5,14 @@ import './styles.scss';
 function ProjectsList({ projects }) {
   return (
     <ul className="projects-list">
-      {projects.map(({ id, title }) => <ProjectItem key={id} id={id} title={title} />)}
+      {projects.map(({ id, title, description }) => (
+        <ProjectItem
+          key={id}
+          id={id}
+          title={title}
+          description={description}
+        />
+      ))}
     </ul>
   );
 }
