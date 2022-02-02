@@ -5,14 +5,10 @@ import { Formik, Form } from 'formik';
 import { createProject } from '../../../api/projects';
 import Modal from '../Modal';
 import Input from '../../common/Input';
-import Textarea from '../../common/Textarea';
+import DescriptionEditor from '../common/DescriptionEditor';
 import CloseModalIcon from '../../icons/CloseModalIcon';
 import ModalCreateProjectIcon from '../../icons/ModalCreateProjectIcon';
 import Button from '../../common/Button';
-import FontIcon from '../../icons/FontIcon';
-import FontWeightIcon from '../../icons/FontWeightIcon';
-import FontItalicIcon from '../../icons/FontItalicIcon';
-import FontColorIcon from '../../icons/FontColorIcon';
 import { projectValidationScheme } from '../../../schemas/projectSchema';
 import './styles.scss';
 
@@ -58,24 +54,7 @@ function CreateProjectModal({ onClose, onCreate }) {
       >
         <Form className="modal-form">
           <Input labelValue="Name" type="text" name="title" placeholder="Name" />
-          <div className="label-wrapper">
-            <label className="label">Description</label>
-            <div className="modal-btn-group">
-              <button>
-                <FontIcon />
-              </button>
-              <button>
-                <FontWeightIcon />
-              </button>
-              <button>
-                <FontItalicIcon />
-              </button>
-              <button>
-                <FontColorIcon />
-              </button>
-            </div>
-          </div>
-          <Textarea name="description" placeholder="Description" />
+          <DescriptionEditor />
           <Button wrapperClasses="modal-btn-wrapper" type="submit" isLoading={isLoading}>
             <ModalCreateProjectIcon />
             Create
