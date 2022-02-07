@@ -32,8 +32,8 @@ function ColumnHeader({ id, title, addCard }) {
     setIsLoading(true);
 
     createTask(newTask)
-      .then(() => {
-        addCard({ ...newTask, id });
+      .then(({ id: taskId }) => {
+        addCard({ id }, { ...newTask, id: taskId });
       })
       .finally(closeCreateTaskModal);
   };

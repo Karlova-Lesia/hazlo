@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import Board from '@asseinfo/react-kanban';
+import Board, { changeCard, addCard, moveCard } from '@asseinfo/react-kanban';
 import PropTypes from 'prop-types';
 import { editTask, getTasks } from '../../api/tasks';
-import groupTasks from '../../helpers/tasks';
 import TaskCard from '../TaskCard';
 import ColumnHeader from '../ColumnHeader';
 import '@asseinfo/react-kanban/dist/styles.css';
@@ -35,49 +34,63 @@ function TaskBoard({ projectId }) {
   useEffect(() => {
     getTasks(projectId)
       .then((tasks) => {
-        const groupedTasks = groupTasks(tasks);
-        setBoard((oldBoard) => ({
-          ...oldBoard,
-          columns: oldBoard.columns.map((column) => ({
-            ...column,
-            cards: groupedTasks[column.id],
-          })),
-        }));
+        let updatedBoard = board;
+
+        tasks.forEach((task) => {
+          updatedBoard = addCard(updatedBoard, { id: task.columnId }, task);
+        });
+
+        setBoard(updatedBoard);
       })
       .finally(() => setIsLoaded(true));
   }, []);
 
-  const handleCardMove = (_board, card, from, destination) => {
+  const handleCardMove = (card, from, to) => {
     editTask(card.id, {
       ...card,
-      columnId: destination.toColumnId,
-    });
+      columnId: to.toColumnId,
+    })
+      .catch(() => {
+        setBoard(board);
+      });
+
+    setBoard(moveCard(board, from, to));
   };
 
-  const renderColumnHeader = ({ id, title }, { addCard }) => (
-    <ColumnHeader id={id} title={title} addCard={addCard} />
+  const onEditTask = (taskId, changedTask) => {
+    setBoard(changeCard(board, taskId, changedTask));
+  };
+
+  const onAddTask = (column, task) => {
+    setBoard(addCard(board, column, task));
+  };
+
+  const renderColumnHeader = ({ id, title }) => (
+    <ColumnHeader id={id} title={title} addCard={onAddTask} />
   );
 
   const renderCard = ({
-    title, description, estimate,
+    id, title, description, estimate, columnId,
   }, { dragging }) => (
     <TaskCard
       dragging={dragging}
+      id={id}
       title={title}
       description={description}
       estimate={estimate}
+      columnId={columnId}
+      onEdit={onEditTask}
     />
   );
 
   return isLoaded && (
     <Board
-      initialBoard={board}
-      allowAddCard={{ on: 'top' }}
-      onCardNew={() => {}}
       onCardDragEnd={handleCardMove}
       renderColumnHeader={renderColumnHeader}
       renderCard={renderCard}
-    />
+    >
+      {board}
+    </Board>
   );
 }
 
