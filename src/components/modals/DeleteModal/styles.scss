@@ -1,0 +1,17 @@
+.delete-modal-wrapper {
+  @apply fixed flex justify-center top-0 w-full h-full;
+  background-color: rgba(0, 0, 0, 0.5);;
+}
+
+.delete-modal {
+  @apply fixed flex flex-col top-32 bg-white w-[450px] h-[300px];
+
+  &-btn-group {
+    @apply flex flex-row;
+  }
+
+}
+
+.header-text {
+  @apply flex justify-center text-lightgrey font-ptm text-h5 m-2;
+}

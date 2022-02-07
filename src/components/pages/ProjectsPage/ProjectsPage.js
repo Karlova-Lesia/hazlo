@@ -35,8 +35,12 @@ function ProjectsPage() {
     )));
   };
 
+  const onDeleteProject = (projectId) => {
+    setProjects(projects.filter((project) => (project.id !== projectId)));
+  };
+
   return (
-    <ProjectsPageContext.Provider value={{ onEditProject }}>
+    <ProjectsPageContext.Provider value={{ onEditProject, onDeleteProject }}>
       <>
         <MainContent title="Projects">
           <div className="projects-block-wrapper">

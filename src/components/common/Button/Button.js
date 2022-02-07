@@ -10,6 +10,7 @@ function Button(props) {
     disabled,
     isLoading,
     onClick,
+    style,
   } = props;
 
   return (
@@ -19,6 +20,7 @@ function Button(props) {
         type={type}
         disabled={disabled || isLoading}
         onClick={onClick}
+        style={style}
       >
         {children}
         {
@@ -37,6 +39,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   isLoading: PropTypes.bool,
   onClick: PropTypes.func,
+  style: PropTypes.object,
 };
 
 Button.defaultProps = {
@@ -46,6 +49,7 @@ Button.defaultProps = {
   disabled: false,
   isLoading: false,
   onClick: () => {},
+  style: {},
 };
 
 export default Button;

@@ -5,20 +5,30 @@ import PropTypes from 'prop-types';
 import EditProjectIcon from '../icons/EditProjectIcon';
 import DeleteProjectIcon from '../icons/DeleteProjectIcon';
 import EditProjectModal from '../modals/EditProjectModal';
+import DeleteProjectModal from '../modals/DeleteProjectModal';
 import { PROJECTS_ROUTE } from '../../constants/routes';
 import './styles.scss';
 
 function ProjectItem({
   id, title, description,
 }) {
-  const [isEditProjectModalOpen, setIisEditProjectModalOpen] = useState(false);
+  const [isEditProjectModalOpen, setIsEditProjectModalOpen] = useState(false);
+  const [isDeleteProjectModalOpen, setIsDeleteProjectModalOpen] = useState(false);
 
   const openEditProjectModal = () => {
-    setIisEditProjectModalOpen(true);
+    setIsEditProjectModalOpen(true);
+  };
+
+  const openDeleteProjectModal = () => {
+    setIsDeleteProjectModalOpen(true);
   };
 
   const closeEditProjectModal = () => {
-    setIisEditProjectModalOpen(false);
+    setIsEditProjectModalOpen(false);
+  };
+
+  const closeDeleteProjectModal = () => {
+    setIsDeleteProjectModalOpen(false);
   };
 
   const renderEditProjectModal = () => {
@@ -30,6 +40,18 @@ function ProjectItem({
         id={id}
         title={title}
         description={description}
+      />,
+      document.body,
+    );
+  };
+
+  const renderDeleteProjectModal = () => {
+    if (!isDeleteProjectModalOpen) return null;
+
+    return createPortal(
+      <DeleteProjectModal
+        id={id}
+        onClose={closeDeleteProjectModal}
       />,
       document.body,
     );
@@ -47,12 +69,13 @@ function ProjectItem({
           <button onClick={openEditProjectModal}>
             <EditProjectIcon />
           </button>
-          <button>
+          <button onClick={openDeleteProjectModal}>
             <DeleteProjectIcon />
           </button>
         </div>
       </li>
       {renderEditProjectModal()}
+      {renderDeleteProjectModal()}
     </>
   );
 }
