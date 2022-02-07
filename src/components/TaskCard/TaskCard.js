@@ -6,32 +6,42 @@ import EditProjectIcon from '../icons/EditProjectIcon';
 import DeleteProjectIcon from '../icons/DeleteProjectIcon';
 import ShowTaskModal from '../modals/ShowTaskModal';
 import EditTaskModal from '../modals/EditTaskModal';
+import DeleteTaskModal from '../modals/DeleteTaskModal';
 import './styles.scss';
 
 function TaskCard({
-  id, title, description, estimate, columnId, onEdit,
+  id, title, description, estimate, columnId, onEdit, onDelete,
 }) {
-  const [isOpenShowTaskModal, setIsOpenShowTaskModal] = useState(false);
-  const [isOpenEditTaskModal, setIsOpenEditTaskModal] = useState(false);
+  const [isShowTaskModalOpen, setIsShowTaskModalOpen] = useState(false);
+  const [isEditTaskModalOpen, setIsEditTaskModalOpen] = useState(false);
+  const [isDeleteTaskModalOpen, setIsDeleteTaskModalOpen] = useState(false);
 
   const closeShowTaskModal = () => {
-    setIsOpenShowTaskModal(false);
+    setIsShowTaskModalOpen(false);
   };
 
   const closeEditTaskModal = () => {
-    setIsOpenEditTaskModal(false);
+    setIsEditTaskModalOpen(false);
+  };
+
+  const closeDeleteTaskModal = () => {
+    setIsDeleteTaskModalOpen(false);
   };
 
   const openShowTaskModal = () => {
-    setIsOpenShowTaskModal(true);
+    setIsShowTaskModalOpen(true);
   };
 
   const openEditTaskModal = () => {
-    setIsOpenEditTaskModal(true);
+    setIsEditTaskModalOpen(true);
+  };
+
+  const openDeleteTaskModal = () => {
+    setIsDeleteTaskModalOpen(true);
   };
 
   const renderShowTaskModal = () => {
-    if (!isOpenShowTaskModal) return null;
+    if (!isShowTaskModalOpen) return null;
 
     return createPortal(
       <ShowTaskModal
@@ -45,7 +55,7 @@ function TaskCard({
   };
 
   const renderEditTaskModal = () => {
-    if (!isOpenEditTaskModal) return null;
+    if (!isEditTaskModalOpen) return null;
 
     return createPortal(
       <EditTaskModal
@@ -56,6 +66,20 @@ function TaskCard({
         columnId={columnId}
         onClose={closeEditTaskModal}
         onEdit={onEdit}
+      />,
+      document.body,
+    );
+  };
+
+  const renderDeleteTaskModal = () => {
+    if (!isDeleteTaskModalOpen) return null;
+
+    return createPortal(
+      <DeleteTaskModal
+        id={id}
+        columnId={columnId}
+        onClose={closeDeleteTaskModal}
+        onDelete={onDelete}
       />,
       document.body,
     );
@@ -74,13 +98,14 @@ function TaskCard({
           <button onClick={openEditTaskModal}>
             <EditProjectIcon />
           </button>
-          <button>
+          <button onClick={openDeleteTaskModal}>
             <DeleteProjectIcon />
           </button>
         </div>
       </div>
       {renderShowTaskModal()}
       {renderEditTaskModal()}
+      {renderDeleteTaskModal()}
     </>
   );
 }
@@ -92,6 +117,7 @@ TaskCard.propTypes = {
   estimate: PropTypes.number,
   columnId: PropTypes.number,
   onEdit: PropTypes.func,
+  onDelete: PropTypes.func,
 };
 
 TaskCard.defaultProps = {
@@ -101,6 +127,7 @@ TaskCard.defaultProps = {
   estimate: 0,
   columnId: 0,
   onEdit: () => {},
+  onDelete: () => {},
 };
 
 export default TaskCard;
