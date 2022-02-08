@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import Board, { changeCard, addCard, moveCard } from '@asseinfo/react-kanban';
+import Board, {
+  changeCard, addCard, moveCard, removeCard,
+} from '@asseinfo/react-kanban';
 import PropTypes from 'prop-types';
 import { editTask, getTasks } from '../../api/tasks';
 import TaskCard from '../TaskCard';
@@ -65,8 +67,16 @@ function TaskBoard({ projectId }) {
     setBoard(addCard(board, column, task));
   };
 
+  const onDeleteTask = (columnId, card) => {
+    setBoard(removeCard(board, { id: columnId }, card));
+  };
+
   const renderColumnHeader = ({ id, title }) => (
-    <ColumnHeader id={id} title={title} addCard={onAddTask} />
+    <ColumnHeader
+      id={id}
+      title={title}
+      addCard={onAddTask}
+    />
   );
 
   const renderCard = ({
@@ -80,6 +90,7 @@ function TaskBoard({ projectId }) {
       estimate={estimate}
       columnId={columnId}
       onEdit={onEditTask}
+      onDelete={onDeleteTask}
     />
   );
 

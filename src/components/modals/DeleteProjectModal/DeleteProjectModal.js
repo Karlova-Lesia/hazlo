@@ -16,9 +16,9 @@ function DeleteProjectModal({ id, onClose }) {
 
     deleteProject(id)
       .then(() => {
-        onDeleteProject(id);
-
         onClose();
+
+        onDeleteProject(id);
       })
       .finally(setIsLoading(false));
   };

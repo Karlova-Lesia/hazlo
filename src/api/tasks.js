@@ -7,4 +7,8 @@ const editTask = (id, task) => axiosInstance.put(`${TASKS_URL}/${id}`, task);
 
 const createTask = (taskData) => axiosInstance.post(TASKS_URL, taskData);
 
-export { getTasks, editTask, createTask };
+const deleteTask = (id) => axiosInstance.delete(`${TASKS_URL}/${id}`);
+
+export {
+  getTasks, editTask, createTask, deleteTask,
+};
