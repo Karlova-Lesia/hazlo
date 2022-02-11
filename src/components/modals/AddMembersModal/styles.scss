@@ -1,0 +1,20 @@
+.add-members-modal-wrapper {
+  @apply fixed flex justify-center top-0 w-full h-full;
+  background-color: rgba(0, 0, 0, 0.5);;
+}
+
+.add-members-modal {
+  @apply fixed flex flex-col top-32 bg-white w-[450px] h-[560px];
+}
+
+.form-select {
+  @apply flex flex-col ml-10 mr-14 mt-6 mb-12;
+}
+
+.checkbox-array {
+  @apply h-[300px] overflow-auto;
+}
+
+.select-btn-wrapper {
+  @apply flex justify-end mt-10 flex-row;
+}

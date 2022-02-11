@@ -15,7 +15,18 @@ function ProjectsPage() {
 
   const { id: userId } = useSelector(({ user }) => user);
 
-  useEffect(() => getProjects({ userId }).then((response) => setProjects(response)), []);
+  useEffect(() => getProjects()
+    .then((responseProjects) => setProjects(responseProjects.filter(
+      (project) => project.ownerId === userId
+          || project.memberIds.find((value) => value === userId),
+    ))), []);
+
+  const setMemberIds = (projectId, memberIds) => {
+    setProjects(projects.map((project) => ((project.id === projectId) ? ({
+      ...project,
+      memberIds,
+    }) : project)));
+  };
 
   const openCreateProjectModal = () => {
     setIsCreateProjectModalOpen(true);
@@ -40,7 +51,7 @@ function ProjectsPage() {
   };
 
   return (
-    <ProjectsPageContext.Provider value={{ onEditProject, onDeleteProject }}>
+    <ProjectsPageContext.Provider value={{ onEditProject, onDeleteProject, setMemberIds }}>
       <>
         <MainContent title="Projects">
           <div className="projects-block-wrapper">

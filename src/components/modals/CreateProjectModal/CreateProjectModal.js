@@ -15,18 +15,23 @@ import './styles.scss';
 function CreateProjectModal({ onClose, onCreate }) {
   const [isLoading, setIsLoading] = useState(false);
 
-  const { id: userId } = useSelector(({ user }) => user);
+  const { id: ownerId } = useSelector(({ user }) => user);
 
   const createNewProject = ({ title, description }) => {
     setIsLoading(true);
 
-    createProject({ userId, title, description }).then(({ id }) => {
-      setIsLoading(false);
-      onCreate({
-        id, title, description, userId,
+    createProject({
+      title, description, ownerId, memberIds: [ownerId],
+    })
+      .then(({ id }) => {
+        setIsLoading(false);
+
+        onCreate({
+          id, title, description, ownerId, memberIds: [ownerId],
+        });
+
+        onClose();
       });
-      onClose();
-    });
   };
 
   return (

@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-function MainContent({ title, children }) {
+function MainContent({ title, children, style }) {
   return (
     <main className="main-content-wrapper">
       <h3 className="title">{title}</h3>
-      <div className="main-content">
+      <div className="main-content" style={style}>
         {children}
       </div>
     </main>
@@ -15,11 +15,13 @@ function MainContent({ title, children }) {
 MainContent.propTypes = {
   title: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]),
+  style: PropTypes.object,
 };
 
 MainContent.defaultProps = {
   title: '',
-  children: [[], null],
+  children: [],
+  style: {},
 };
 
 export default MainContent;

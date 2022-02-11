@@ -13,7 +13,7 @@ function ProjectPage() {
   useEffect(() => getProject({ id }).then((response) => setProject(response)), []);
 
   return (
-    <MainContent title={project.title}>
+    <MainContent title={project.title} style={{ flexDirection: 'column' }}>
       <p className="description-text">{project.description}</p>
       <TaskBoard projectId={id} />
     </MainContent>
