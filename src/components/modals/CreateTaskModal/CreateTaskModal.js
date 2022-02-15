@@ -19,7 +19,7 @@ function CreateTaskModal({ onClose, onCreate, isLoading }) {
       <h1>
         Create
         <br />
-        Project
+        Task
       </h1>
       <button onClick={onClose}>
         <CloseModalIcon />
@@ -40,10 +40,10 @@ function CreateTaskModal({ onClose, onCreate, isLoading }) {
       >
         <Form className="modal-form">
           <div className="input-group">
-            <div className="w-3/5">
-              <Input labelValue="Name" type="text" name="title" placeholder="Name" />
+            <Input labelValue="Name" type="text" name="title" placeholder="Name" />
+            <div className="w-2/5">
+              <Input labelValue="Estimate(m)" type="number" name="estimate" placeholder="Estimate" />
             </div>
-            <Input labelValue="Estimate(m)" type="number" name="estimate" placeholder="Estimate" />
           </div>
           <div className="label-wrapper">
             <label className="label">Description</label>
