@@ -58,7 +58,9 @@ function EditTaskModal({
       >
         <Form className="modal-form">
           <div className="input-group">
-            <Input labelValue="Name" type="text" name="title" placeholder="Name" />
+            <div className="w-full">
+              <Input labelValue="Name" type="text" name="title" placeholder="Name" />
+            </div>
             <div className="w-2/5">
               <Input labelValue="Estimate(m)" type="number" name="estimate" placeholder="Estimate" />
             </div>

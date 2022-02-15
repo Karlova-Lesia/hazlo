@@ -1,21 +1,22 @@
 import { IconContext } from 'react-icons';
 import { HiUserAdd } from 'react-icons/hi';
 import PropTypes from 'prop-types';
+import './styles.scss';
 
-function AddMembersIcon({ style }) {
+function AddMembersIcon({ className }) {
   return (
-    <IconContext.Provider value={style}>
-      <HiUserAdd />
+    <IconContext.Provider value={{ className: { className } }}>
+      <HiUserAdd className={className} />
     </IconContext.Provider>
   );
 }
 
 AddMembersIcon.propTypes = {
-  style: PropTypes.object,
+  className: PropTypes.string,
 };
 
 AddMembersIcon.defaultProps = {
-  style: { color: 'lightgrey', size: '20px' },
+  className: 'add-members-icon',
 };
 
 export default AddMembersIcon;

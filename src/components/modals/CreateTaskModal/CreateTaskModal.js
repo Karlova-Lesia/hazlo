@@ -6,10 +6,6 @@ import Textarea from '../../common/Textarea';
 import CloseModalIcon from '../../icons/CloseModalIcon';
 import ModalCreateProjectIcon from '../../icons/ModalCreateProjectIcon';
 import Button from '../../common/Button';
-import FontIcon from '../../icons/FontIcon';
-import FontWeightIcon from '../../icons/FontWeightIcon';
-import FontItalicIcon from '../../icons/FontItalicIcon';
-import FontColorIcon from '../../icons/FontColorIcon';
 import { createTaskValidationScheme } from '../../../schemas/taskSchema';
 import './styles.scss';
 
@@ -40,27 +36,15 @@ function CreateTaskModal({ onClose, onCreate, isLoading }) {
       >
         <Form className="modal-form">
           <div className="input-group">
-            <Input labelValue="Name" type="text" name="title" placeholder="Name" />
+            <div className="w-full">
+              <Input labelValue="Name" type="text" name="title" placeholder="Name" />
+            </div>
             <div className="w-2/5">
               <Input labelValue="Estimate(m)" type="number" name="estimate" placeholder="Estimate" />
             </div>
           </div>
           <div className="label-wrapper">
             <label className="label">Description</label>
-            <div className="modal-btn-group">
-              <button>
-                <FontIcon />
-              </button>
-              <button>
-                <FontWeightIcon />
-              </button>
-              <button>
-                <FontItalicIcon />
-              </button>
-              <button>
-                <FontColorIcon />
-              </button>
-            </div>
           </div>
           <Textarea name="description" placeholder="Description" />
           <Button wrapperClasses="modal-btn-wrapper" type="submit" isLoading={isLoading}>

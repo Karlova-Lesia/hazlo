@@ -1,0 +1,245 @@
+@media screen and (max-width: 1300px) {
+  .header {
+    @apply pt-[25px] pr-[100px] pb-[20px] pl-[100px];
+  }
+
+  .btn-logout:hover::after {
+    @apply hidden;
+  }
+
+  .logo {
+    @apply text-h3;
+  }
+
+  .main-content-wrapper {
+    @apply ml-5 mr-5;
+  }
+
+  .main-content {
+    @apply flex w-5/6;
+  }
+
+  .title {
+    @apply text-[24px];
+  }
+
+  .card-title {
+    @apply mb-2 text-[10px];
+  }
+
+  .column-btn {
+    @apply mt-2 mb-2 p-0;
+  }
+
+  .delete-icon, .edit-icon {
+    @apply w-[10px] h-[10px];
+  }
+
+  .logout-icon {
+    @apply w-[24px] h-[24px];
+  }
+
+  .modal-icon-task-show, .font-icon, .create-project-icon {
+    @apply w-[12px] h-[12px];
+  }
+
+  .font-italic-icon, .font-color-icon {
+    @apply w-[16px] h-[16px];
+  }
+
+  .add-members-icon, .modal-add-members-icon, .font-weight-icon, .modal-create-project-icon, .create-task-icon {
+    @apply w-[14px] h-[14px];
+  }
+
+  .description-text {
+    @apply text-[10px];
+  }
+
+  .project-item-title {
+    @apply p-3;
+  }
+
+  .btn-group button {
+    @apply pl-2 pr-3;
+  }
+
+  .projects-list {
+    @apply pr-8 pl-8;
+  }
+
+  .react-kanban-board {
+    align-items: center !important;
+  }
+
+  .react-kanban-column {
+    @apply w-[200px] pt-6;
+  }
+
+  .task-item {
+    @apply mb-1 w-[170px] ml-[3px];
+
+    &-title {
+      @apply p-2 text-[8px] w-4/5;
+    }
+  }
+
+  .task-btn-group {
+    @apply flex-row justify-center;
+  }
+
+  .task-btn-group button {
+    @apply pr-1 pb-1;
+  }
+
+  .image-wrapper {
+    @apply hidden;
+  }
+
+  .input-wrapper {
+    @apply flex justify-start;
+  }
+
+  .input {
+    @apply h-12 py-3 px-4 text-[14px];
+  }
+
+  .form-content {
+    @apply items-center mt-5;
+  }
+
+  .link-wrapper {
+    @apply pr-8 pl-0;
+  }
+
+  .auth-btn-wrapper {
+    @apply pr-8;
+  }
+
+  .modal {
+    @apply top-10 w-3/5 h-[400px];
+  }
+
+  .modal-header {
+    @apply text-[14px] mt-4 ml-8 mr-8 mb-2;
+  }
+
+  .modal-form {
+    @apply -m-1;
+  }
+
+  .input-group {
+    @apply justify-between;
+  }
+
+  .label-wrapper {
+    @apply mt-0 -mb-3 -mb-3;
+  }
+
+  .label {
+    @apply text-[14px];
+  }
+
+  .textarea {
+    @apply h-[150px] text-[12px];
+  }
+
+  .modal-btn-wrapper {
+    @apply flex items-end w-full;
+
+    button {
+      @apply flex -mt-3 mr-8 w-[80px] h-[20px] text-[12px] p-2;
+    }
+  }
+
+  .text {
+    @apply text-[16px];
+  }
+
+  .btn {
+    @apply w-[100px] h-[30px] text-[14px];
+  }
+
+  .modal-btn-group button {
+    @apply p-1;
+  }
+
+  .error-message {
+    @apply text-[12px];
+  }
+
+  .project-item {
+    @apply mb-3;
+
+    &-title {
+      @apply text-[12px];
+    }
+  }
+
+  .card {
+    @apply m-1;
+
+    &-item-group {
+      @apply flex flex-row justify-between;
+    }
+  }
+
+  .item-card-value-short {
+    @apply h-[12px] p-4 text-[12px];
+  }
+
+  .item-card-value-long {
+    @apply h-[150px] p-4 text-[12px];
+  }
+
+  .card-item {
+    @apply mt-2 ml-6 mr-6 mb-2;
+
+    &-label {
+      @apply text-[12px];
+    }
+  }
+
+  .delete-modal {
+    @apply w-1/2 h-[160px] top-16;
+
+    &-btn-group {
+      @apply justify-evenly -mt-5;
+    }
+  }
+
+  .header-text {
+    @apply text-[14px] m-0;
+  }
+
+  .add-members-modal {
+    @apply w-2/5 h-[400px];
+  }
+
+  .form-select {
+    @apply ml-3 mr-6 mt-3 mb-0;
+  }
+
+  .checkbox-array {
+    @apply h-[250px];
+  }
+
+  .select-btn-wrapper {
+    @apply mt-4 mr-1;
+  }
+
+  .checkbox-wrapper {
+    @apply m-1;
+  }
+
+  .checkbox-label {
+    @apply text-[12px] p-4 ml-4;
+  }
+
+  .custom-alert {
+    @apply p-2 w-[150px];
+  }
+
+  .error-icon {
+    @apply w-[20px] h-[20px];
+  }
+}

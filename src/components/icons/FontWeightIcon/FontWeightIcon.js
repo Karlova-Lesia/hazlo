@@ -1,9 +1,10 @@
 import { MdLineWeight } from 'react-icons/md';
 import { IconContext } from 'react-icons';
+import './styles.scss';
 
 function FontWeightIcon() {
   return (
-    <IconContext.Provider value={{ color: 'lightgrey', size: '20px' }}>
+    <IconContext.Provider value={{ className: 'font-weight-icon' }}>
       <MdLineWeight />
     </IconContext.Provider>
   );

@@ -1,9 +1,10 @@
 import { IconContext } from 'react-icons';
 import { IoMdSearch } from 'react-icons/io';
+import './styles.scss';
 
 function ShowTaskDetailsIcon() {
   return (
-    <IconContext.Provider value={{ color: 'lightgrey', size: '20px' }}>
+    <IconContext.Provider value={{ className: 'modal-icon-task-show' }}>
       <IoMdSearch />
     </IconContext.Provider>
   );

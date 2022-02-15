@@ -1,23 +1,24 @@
 import PropTypes from 'prop-types';
 import { FaTrashAlt } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
+import './styles.scss';
 
-function DeleteProjectIcon({ style }) {
+function DeleteProjectIcon({ className }) {
   return (
-    <IconContext.Provider value={style}>
+    <IconContext.Provider value={{ className: { className } }}>
       <div>
-        <FaTrashAlt />
+        <FaTrashAlt className={className} />
       </div>
     </IconContext.Provider>
   );
 }
 
 DeleteProjectIcon.propTypes = {
-  style: PropTypes.object,
+  className: PropTypes.string,
 };
 
 DeleteProjectIcon.defaultProps = {
-  style: { color: 'lightgrey', size: '16px' },
+  className: 'delete-icon',
 };
 
 export default DeleteProjectIcon;

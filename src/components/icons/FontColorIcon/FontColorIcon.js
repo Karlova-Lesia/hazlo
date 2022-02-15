@@ -1,9 +1,10 @@
 import { MdColorLens } from 'react-icons/md';
 import { IconContext } from 'react-icons';
+import './styles.scss';
 
 function FontColorIcon() {
   return (
-    <IconContext.Provider value={{ color: 'lightgrey', size: '20px' }}>
+    <IconContext.Provider value={{ className: 'font-color-icon' }}>
       <MdColorLens />
     </IconContext.Provider>
   );

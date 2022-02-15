@@ -3,8 +3,7 @@
 }
 
 .react-kanban-column {
-  width: 295px;
-  @apply flex items-stretch bg-middlegrey pt-10 shadow-xl;
+  @apply flex bg-middlegrey pt-10 shadow-xl w-[260px];
 }
 
 .react-kanban-card--dragging {

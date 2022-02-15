@@ -24,7 +24,7 @@ function ShowTaskModal({
     <Modal headerChildren={renderChildren()}>
       <div className="card">
         <div className="card-item-group">
-          <ModalContentItem label="Name" itemValue={title} className="item-card-value-short" wrapperClass="w-3/5" />
+          <ModalContentItem label="Name" itemValue={title} className="item-card-value-short" />
           <ModalContentItem label="Estimate(m)" itemValue={estimate} className="item-card-value-short" wrapperClass="w-2/5" />
         </div>
         <ModalContentItem label="Description" itemValue={description} className="item-card-value-long" />

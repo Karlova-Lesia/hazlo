@@ -1,9 +1,10 @@
 import { IoCloseCircleOutline } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
+import './styles.scss';
 
 function ErrorIcon() {
   return (
-    <IconContext.Provider value={{ color: 'red', size: '30px', style: { margin: '15px' } }}>
+    <IconContext.Provider value={{ className: 'error-icon' }}>
       <div>
         <IoCloseCircleOutline />
       </div>

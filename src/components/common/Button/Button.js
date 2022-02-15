@@ -16,7 +16,7 @@ function Button(props) {
   return (
     <div className={wrapperClasses}>
       <button
-        className="font-ptm w-36 text-white py-2 px-4 flex justify-around items-center bg-mint"
+        className="btn bg-mint"
         type={type}
         disabled={disabled || isLoading}
         onClick={onClick}
