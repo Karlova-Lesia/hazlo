@@ -8,6 +8,7 @@ import ProjectsPage from '../pages/ProjectsPage';
 import ProjectPage from '../pages/ProjectPage';
 import RegistrationPage from '../pages/RegistrationPage';
 import AuthorizationPage from '../pages/AuthorizationPage';
+import ErrorPage from '../pages/ErrorPage';
 import { AlertTemplate, options } from '../AlertTemplate';
 import ProtectedRoute from '../ProtectedRoute';
 import GuestRoute from '../GuestRoute/GuestRoute';
@@ -25,6 +26,7 @@ function App() {
           <ProtectedRoute exact path={PROJECT_PAGE} component={ProjectPage} />
           <GuestRoute exact path={REGISTRATION_PAGE} component={RegistrationPage} />
           <GuestRoute exact path={AUTHORIZATION_PAGE} component={AuthorizationPage} />
+          <ProtectedRoute exact path="*" component={ErrorPage} />
         </Switch>
       </Router>
     </AlertProvider>
