@@ -23,7 +23,7 @@ function DeleteModal({
             Cancel
           </Button>
           <Button type="submit" isLoading={isLoading}>
-            <DeleteProjectIcon style={{ color: 'white', size: '16px' }} />
+            <DeleteProjectIcon className="modal-icon-delete" />
             Delete
           </Button>
         </form>

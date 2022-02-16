@@ -1,9 +1,10 @@
 import { FaPencilAlt } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
+import './styles.scss';
 
 function EditProjectIcon() {
   return (
-    <IconContext.Provider value={{ color: 'lightgrey', size: '16px' }}>
+    <IconContext.Provider value={{ className: 'edit-icon' }}>
       <div>
         <FaPencilAlt />
       </div>

@@ -34,20 +34,22 @@ function CreateProjectModal({ onClose, onCreate }) {
       });
   };
 
+  const renderHeader = () => (
+    <>
+      <h1>
+        Create
+        <br />
+        Project
+      </h1>
+      <button onClick={onClose}>
+        <CloseModalIcon />
+      </button>
+    </>
+  );
+
   return (
     <Modal
-      headerChildren={(
-        <>
-          <h1>
-            Create
-            <br />
-            Project
-          </h1>
-          <button onClick={onClose}>
-            <CloseModalIcon />
-          </button>
-        </>
-      )}
+      headerChildren={renderHeader()}
     >
       <Formik
         initialValues={{

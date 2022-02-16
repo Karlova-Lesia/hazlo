@@ -1,9 +1,10 @@
 import { IconContext } from 'react-icons';
 import { TiPen } from 'react-icons/ti';
+import './styles.scss';
 
 function ModalCreateProjectIcon() {
   return (
-    <IconContext.Provider value={{ color: 'white', size: '20px' }}>
+    <IconContext.Provider value={{ className: 'modal-create-project-icon' }}>
       <TiPen />
     </IconContext.Provider>
   );

@@ -62,11 +62,11 @@ function RegistrationPage() {
         onSubmit={handleRegister}
       >
         <Form className="w-400">
-          <div>
-            <Input label="First name" type="text" name="firstName" placeholder="First name" />
-            <Input label="Last name" type="text" name="lastName" placeholder="Last name" />
-            <Input label="Email" type="email" name="email" placeholder="Email" />
-            <Input label="Password" type="password" name="password" placeholder="Password" />
+          <div className="form-content">
+            <Input labelValue="First name" type="text" name="firstName" placeholder="First name" />
+            <Input labelValue="Last name" type="text" name="lastName" placeholder="Last name" />
+            <Input labelValue="Email" type="email" name="email" placeholder="Email" />
+            <Input labelValue="Password" type="password" name="password" placeholder="Password" />
             <AuthFormLink text="Already registered?" path={AUTHORIZATION_PAGE} link="Log in" />
             <Button wrapperClasses="auth-btn-wrapper" type="submit" disabled={isLoading} isLoading={isLoading}>Register</Button>
           </div>

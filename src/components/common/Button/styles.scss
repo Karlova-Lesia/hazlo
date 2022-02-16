@@ -6,6 +6,10 @@
   @apply flex justify-end flex-row pr-8;
 }
 
+.btn {
+  @apply font-ptm w-36 text-white py-2 px-4 flex justify-around items-center;
+}
+
 button[disabled] {
   background-color: #D1D5DB;
 }

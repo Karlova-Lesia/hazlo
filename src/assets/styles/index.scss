@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 
 @import "variables";
+@import "media-requests-max-1300px";
+@import "media-requests-max-700px";
 
 @tailwind base;
 @tailwind components;

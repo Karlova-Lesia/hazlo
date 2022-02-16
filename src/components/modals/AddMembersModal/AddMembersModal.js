@@ -67,7 +67,7 @@ function AddMembersModal({
               />
             </div>
             <Button wrapperClasses="select-btn-wrapper" type="submit">
-              <AddMembersIcon style={{ color: 'white', size: '20px' }} />
+              <AddMembersIcon className="modal-add-members-icon" />
               Select
             </Button>
           </Form>

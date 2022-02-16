@@ -60,9 +60,9 @@ function AuthorizationPage() {
         onSubmit={handleAuth}
       >
         <Form className="w-400">
-          <div>
-            <Input label="Email" type="email" name="email" placeholder="Email" />
-            <Input label="Password" type="password" name="password" placeholder="Password" />
+          <div className="form-content">
+            <Input labelValue="Email" type="email" name="email" placeholder="Email" />
+            <Input labelValue="Password" type="password" name="password" placeholder="Password" />
             <AuthFormLink text="Not registered yet?" path={REGISTRATION_PAGE} link="Register" />
             <Button wrapperClasses="auth-btn-wrapper" type="submit" disabled={isLoading} isLoading={isLoading}>Log in</Button>
           </div>

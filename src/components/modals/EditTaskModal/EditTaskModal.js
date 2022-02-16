@@ -37,7 +37,7 @@ function EditTaskModal({
       <h1>
         Edit
         <br />
-        Project
+        Task
       </h1>
       <button onClick={onClose}>
         <CloseModalIcon />
@@ -58,10 +58,12 @@ function EditTaskModal({
       >
         <Form className="modal-form">
           <div className="input-group">
-            <div className="w-3/5">
+            <div className="w-full">
               <Input labelValue="Name" type="text" name="title" placeholder="Name" />
             </div>
-            <Input labelValue="Estimate(m)" type="number" name="estimate" placeholder="Estimate" />
+            <div className="w-2/5">
+              <Input labelValue="Estimate(m)" type="number" name="estimate" placeholder="Estimate" />
+            </div>
           </div>
           <DescriptionEditor />
           <Button wrapperClasses="modal-btn-wrapper" type="submit" isLoading={isLoading}>
