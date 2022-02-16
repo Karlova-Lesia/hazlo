@@ -31,15 +31,11 @@
     @apply mt-2 mb-2 p-0;
   }
 
-  .modal-icon-task-show, .font-icon, .create-project-icon {
+  .modal-icon-task-show, .create-project-icon {
     @apply w-[12px] h-[12px];
   }
 
-  .font-italic-icon, .font-color-icon {
-    @apply w-[16px] h-[16px];
-  }
-
-  .add-members-icon, .modal-add-members-icon, .font-weight-icon, .modal-create-project-icon, .create-task-icon {
+  .add-members-icon, .modal-add-members-icon, .modal-create-project-icon, .create-task-icon {
     @apply w-[14px] h-[14px];
   }
 
