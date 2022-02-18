@@ -1,0 +1,23 @@
+.error-content-wrapper {
+  @apply flex flex-col justify-center font-ptm text-gray-400;
+}
+
+.error-title {
+  @apply text-[40px];
+}
+
+.error-main-content {
+  @apply text-[20px] break-words;
+}
+
+.pathname-text {
+  @apply text-mint pr-2 pl-2;
+}
+
+.error-btn-wrapper {
+  @apply flex justify-start mt-6;
+}
+
+.error-image-wrapper {
+  @apply w-[300px];
+}

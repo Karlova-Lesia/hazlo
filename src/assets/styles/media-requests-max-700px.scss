@@ -148,7 +148,7 @@
   }
 
   .btn {
-    @apply w-[80px] h-[20px] text-[12px];
+    @apply min-w-fit h-[20px] text-[12px];
   }
 
   .modal-btn-group button {
@@ -233,5 +233,29 @@
 
   .error-icon {
     @apply w-[15px] h-[15px];
+  }
+
+  .error-content-wrapper {
+    @apply m-5;
+  }
+
+  .error-title {
+    @apply text-[20px];
+  }
+
+  .error-main-content {
+    @apply text-[12px];
+  }
+
+  .pathname-text {
+    @apply pr-1 pl-1;
+  }
+
+  .error-btn-wrapper {
+    @apply mt-4;
+  }
+
+  .error-image-wrapper {
+    @apply w-[150px];
   }
 }

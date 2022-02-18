@@ -152,7 +152,7 @@
   }
 
   .btn {
-    @apply w-[100px] h-[30px] text-[14px];
+    @apply min-w-fit h-[30px] text-[14px];
   }
 
   .modal-btn-group button {
@@ -237,5 +237,29 @@
 
   .error-icon {
     @apply w-[20px] h-[20px];
+  }
+
+  .error-content-wrapper {
+    @apply m-8;
+  }
+
+  .error-title {
+    @apply text-[32px];
+  }
+
+  .error-main-content {
+    @apply text-[18px];
+  }
+
+  .pathname-text {
+    @apply pr-2 pl-2;
+  }
+
+  .error-btn-wrapper {
+    @apply mt-5;
+  }
+
+  .error-image-wrapper {
+    @apply w-[250px];
   }
 }
