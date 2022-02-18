@@ -54,6 +54,8 @@ function ProjectItem({
         id={id}
         title={title}
         description={description}
+        ownerId={ownerId}
+        memberIds={memberIds}
       />,
       document.body,
     );
