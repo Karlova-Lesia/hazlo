@@ -1,5 +1,6 @@
 .react-kanban-board {
-  @apply flex flex-col items-center w-full items-center overflow-hidden;
+  align-items: center !important;
+  @apply flex overflow-hidden ml-36;
 }
 
 .react-kanban-column {

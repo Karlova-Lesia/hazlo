@@ -1,3 +1,11 @@
+.project-main-content-wrapper {
+  @apply flex w-full mt-5;
+}
+
+.project-main-content {
+  @apply flex flex-row justify-center items-start;
+}
+
 .description-text {
   @apply flex justify-center text-lightgrey uppercase font-ptm text-center;
 }
