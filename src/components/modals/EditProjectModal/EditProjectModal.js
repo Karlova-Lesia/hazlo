@@ -1,5 +1,4 @@
 import { useContext, useState } from 'react';
-import { useSelector } from 'react-redux';
 import { Form, Formik } from 'formik';
 import PropTypes from 'prop-types';
 import { editProject } from '../../../api/projects';
@@ -13,18 +12,16 @@ import ModalCreateProjectIcon from '../../icons/ModalCreateProjectIcon';
 import { projectValidationScheme } from '../../../schemas/projectSchema';
 
 function EditProjectModal({
-  id, title, description, onClose,
+  id, title, description, ownerId, memberIds, onClose,
 }) {
   const { onEditProject } = useContext(ProjectsPageContext);
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const { id: userId } = useSelector(({ user }) => user);
-
   const handleEditProject = (projectData) => {
     setIsLoading(true);
 
-    editProject(id, { ...projectData, userId })
+    editProject(id, { ...projectData, ownerId, memberIds })
       .then((newProject) => {
         onEditProject(id, newProject);
 
@@ -73,13 +70,17 @@ EditProjectModal.propTypes = {
   id: PropTypes.number,
   title: PropTypes.string,
   description: PropTypes.string,
+  ownerId: PropTypes.number,
+  memberIds: PropTypes.array,
   onClose: PropTypes.func,
 };
 
 EditProjectModal.defaultProps = {
-  id: 0,
+  id: null,
   title: '',
   description: '',
+  ownerId: null,
+  memberIds: [],
   onClose: () => {},
 };
 
