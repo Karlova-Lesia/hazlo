@@ -1,4 +1,4 @@
 .custom-alert {
   box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.03);
-  @apply flex justify-around bg-lightgrey text-white p-5 content-around items-center font-ptm w-[300px];
+  @apply flex justify-around bg-gray-300 text-red-600 pr-5 content-around items-center font-ptm min-w-fit;
 }
