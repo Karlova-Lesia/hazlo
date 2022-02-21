@@ -3,7 +3,6 @@ import {
   getMaxSizeMessage,
   getMinSizeMessage,
   getRequiredMessage,
-  INVALID_EMAIL_ADDRESS_MESSAGE,
 } from '../helpers/validationHelpers';
 
 export const createTaskValidationScheme = Yup.object({

@@ -13,7 +13,7 @@ function MembersColumn({ project }) {
         setMembers(response);
       });
     }
-  }, []);
+  }, [project]);
 
   return (
     <ul className="members-column-wrapper">
