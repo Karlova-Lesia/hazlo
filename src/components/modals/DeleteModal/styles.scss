@@ -4,7 +4,7 @@
 }
 
 .delete-modal {
-  @apply fixed flex flex-col top-32 bg-white w-[450px] h-[300px];
+  @apply fixed flex flex-col top-32 bg-white w-450 h-300;
 
   &-btn-group {
     @apply flex flex-row;

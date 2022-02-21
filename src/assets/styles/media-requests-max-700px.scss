@@ -1,6 +1,6 @@
 @media screen and (max-width: 700px) {
   .header {
-    @apply pt-[15px] pr-[50px] pb-[15px] pl-[50px];
+    @apply pt-15px pr-50px pb-15px pl-50px;
   }
 
   .btn-logout:hover::after {
@@ -20,11 +20,11 @@
   }
 
   .title {
-    @apply text-[18px];
+    @apply text-18;
   }
 
   .card-title {
-    @apply mb-2 text-[10px];
+    @apply mb-2 text-10;
   }
 
   .column-btn {
@@ -32,23 +32,23 @@
   }
 
   .modal-icon-task-show, .create-project-icon {
-    @apply w-[12px] h-[12px];
+    @apply w-12 h-12;
   }
 
   .add-members-icon, .modal-add-members-icon, .modal-create-project-icon, .create-task-icon {
-    @apply w-[14px] h-[14px];
+    @apply w-14 h-14;
   }
 
   .delete-icon, .edit-icon {
-    @apply w-[10px] h-[10px];
+    @apply w-10 h-10;
   }
 
   .logout-icon {
-    @apply w-[20px] h-[20px];
+    @apply w-20 h-20;
   }
 
   .description-text {
-    @apply text-[10px];
+    @apply text-10;
   }
 
   .project-item-title {
@@ -60,7 +60,7 @@
   }
 
   .projects-list {
-    @apply pr-8 pl-8;
+    @apply pr-8 pl-8 -mt-4;
   }
 
   .react-kanban-board {
@@ -69,14 +69,14 @@
   }
 
   .react-kanban-column {
-    @apply w-[100px] pt-5;
+    @apply w-100 pt-5;
   }
 
   .task-item {
-    @apply mb-1 w-[82px] -ml-[6px];
+    @apply mb-1 w-82 -ml-6px;
 
     &-title {
-      @apply p-1 text-[8px] w-4/5;
+      @apply p-1 text-8 w-4/5;
     }
   }
 
@@ -97,7 +97,7 @@
   }
 
   .input {
-    @apply h-10 py-3 px-4 text-[12px];
+    @apply h-10 py-3 px-4 text-12;
   }
 
   .form-content {
@@ -113,11 +113,11 @@
   }
 
   .modal {
-    @apply top-10 w-4/5 h-[360px];
+    @apply top-10 w-3/5 pb-4;
   }
 
   .modal-header {
-    @apply text-[14px] mt-4 ml-8 mr-8 mb-2;
+    @apply text-14 mt-4 ml-8 mr-8 mb-2;
   }
 
   .modal-form {
@@ -129,27 +129,27 @@
   }
 
   .label {
-    @apply font-ptm text-lightgrey text-[12px];
+    @apply font-ptm text-lightgrey text-12;
   }
 
   .textarea {
-    @apply h-[120px] text-[12px];
+    @apply h-120 text-12;
   }
 
   .modal-btn-wrapper {
     @apply flex items-end w-full;
 
     button {
-      @apply flex -mt-3 mr-8 w-[80px] h-[20px] text-[12px] p-2;
+      @apply flex -mt-3 mr-8 w-80 h-20 text-12 p-2;
     }
   }
 
   .text {
-    @apply text-[12px];
+    @apply text-12;
   }
 
   .btn {
-    @apply min-w-fit h-[20px] text-[12px];
+    @apply w-85 h-20 text-12;
   }
 
   .modal-btn-group button {
@@ -157,14 +157,22 @@
   }
 
   .error-message {
-    @apply text-[10px];
+    @apply text-10;
   }
 
   .project-item {
     @apply mb-3;
 
     &-title {
-      @apply text-[12px];
+      @apply text-8;
+    }
+  }
+
+  .btn-group {
+    @apply flex-col justify-center;
+
+    button {
+      @apply p-1;
     }
   }
 
@@ -177,23 +185,23 @@
   }
 
   .item-card-value-short {
-    @apply h-[12px] p-4 text-[12px];
+    @apply h-12 p-4 text-12;
   }
 
   .item-card-value-long {
-    @apply h-[150px] p-4 text-[12px];
+    @apply h-150 p-4 text-12;
   }
 
   .card-item {
     @apply mt-2 ml-6 mr-6 mb-2;
 
     &-label {
-      @apply text-[12px];
+      @apply text-12;
     }
   }
 
   .delete-modal {
-    @apply w-2/3 h-[150px] top-16;
+    @apply w-2/3 h-150 top-16;
 
     &-btn-group {
       @apply justify-evenly -mt-5;
@@ -201,11 +209,11 @@
   }
 
   .header-text {
-    @apply text-[14px] m-0;
+    @apply text-14 m-0;
   }
 
   .add-members-modal {
-    @apply w-2/3 h-[360px];
+    @apply w-2/3 h-360;
   }
 
   .form-select {
@@ -213,7 +221,7 @@
   }
 
   .checkbox-array {
-    @apply h-[220px];
+    @apply h-220;
   }
 
   .select-btn-wrapper {
@@ -225,15 +233,15 @@
   }
 
   .checkbox-label {
-    @apply text-[12px] p-4 ml-4;
+    @apply text-12 p-4 ml-4;
   }
 
   .custom-alert {
-    @apply p-2 w-[150px];
+    @apply p-2 w-150;
   }
 
   .error-icon {
-    @apply w-[15px] h-[15px];
+    @apply w-15 h-15;
   }
 
   .error-content-wrapper {
@@ -241,11 +249,11 @@
   }
 
   .error-title {
-    @apply text-[20px];
+    @apply text-20;
   }
 
   .error-main-content {
-    @apply text-[12px];
+    @apply text-12;
   }
 
   .pathname-text {
@@ -257,7 +265,7 @@
   }
 
   .error-image-wrapper {
-    @apply w-[150px];
+    @apply w-150;
   }
 
   .members-column {
@@ -266,16 +274,16 @@
     }
 
     &-header {
-      @apply m-1 text-[12px];
+      @apply m-1 text-12;
     }
 
     &-item {
-      @apply p-1 ml-2 mr-2 mt-0.5 mb-1 text-[10px];
+      @apply p-1 ml-2 mr-2 mt-0.5 mb-1 text-10;
     }
   }
 
   .user-icon {
-    @apply w-[12px] h-[12px] mr-1;
+    @apply w-12 h-12 mr-1;
   }
 
   .project-main-content {

@@ -3,11 +3,11 @@
 }
 
 .error-title {
-  @apply text-[40px];
+  @apply text-40;
 }
 
 .error-main-content {
-  @apply text-[20px] break-words;
+  @apply text-20 break-words;
 }
 
 .pathname-text {
@@ -19,5 +19,5 @@
 }
 
 .error-image-wrapper {
-  @apply w-[300px];
+  @apply w-300;
 }
