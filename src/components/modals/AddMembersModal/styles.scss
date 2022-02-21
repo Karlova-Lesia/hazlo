@@ -4,7 +4,7 @@
 }
 
 .add-members-modal {
-  @apply fixed flex flex-col top-32 bg-white w-450 h-560;
+  @apply fixed flex flex-col top-32 bg-white w-450 min-h-fit;
 }
 
 .form-select {

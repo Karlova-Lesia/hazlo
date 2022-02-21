@@ -86,7 +86,7 @@ function TaskCard({
   };
 
   return (
-    <>
+    <div className="task-item-wrapper">
       <div className="task-item">
         <div className="task-item-title">
           <h4>{title}</h4>
@@ -106,7 +106,7 @@ function TaskCard({
       {renderShowTaskModal()}
       {renderEditTaskModal()}
       {renderDeleteTaskModal()}
-    </>
+    </div>
   );
 }
 

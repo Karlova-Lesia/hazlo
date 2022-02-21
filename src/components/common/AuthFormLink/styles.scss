@@ -1,5 +1,9 @@
 .link-wrapper {
   @apply flex justify-end text-base font-ptm text-lightgrey pr-8 pt-4 pl-4 pb-6;
+
+  span {
+    @apply pr-2;
+  }
 }
 
 .link {
