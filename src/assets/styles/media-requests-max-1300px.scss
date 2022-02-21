@@ -96,7 +96,7 @@
   }
 
   .input {
-    @apply h-12 py-3 px-4 text-14;
+    @apply h-12 p-5 text-14;
   }
 
   .form-content {
@@ -105,6 +105,14 @@
 
   .link-wrapper {
     @apply pr-8 pl-0;
+
+    span {
+      @apply text-12;
+    }
+  }
+
+  .link {
+    @apply text-12;
   }
 
   .auth-btn-wrapper {
@@ -116,7 +124,7 @@
   }
 
   .modal {
-    @apply top-10 w-2/5 pb-4;
+    @apply top-16 w-2/5 pb-4;
   }
 
   .modal-header {
@@ -204,7 +212,7 @@
   }
 
   .delete-modal {
-    @apply w-1/2 h-160 top-16;
+    @apply w-1/2 min-h-fit top-16;
 
     &-btn-group {
       @apply justify-evenly -mt-5;
@@ -212,11 +220,11 @@
   }
 
   .header-text {
-    @apply text-14 m-0;
+    @apply text-14 m-1;
   }
 
   .add-members-modal {
-    @apply w-2/5 h-400;
+    @apply w-2/5 h-400 top-16;
   }
 
   .form-select {
@@ -268,7 +276,7 @@
   }
 
   .error-image-wrapper {
-    @apply w-250;
+    @apply w-250 ml-20;
   }
 
   .members-column {
@@ -290,6 +298,6 @@
   }
 
   .project-main-content-wrapper  {
-      @apply mt-2 ;
+      @apply mt-2;
   }
 }

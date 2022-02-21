@@ -1,5 +1,9 @@
 .task-item {
-  @apply flex flex-row w-230;
+  @apply flex flex-row w-full mb-2;
+
+  &-wrapper {
+    @apply flex w-230;
+  }
 
   &-title {
     @apply flex text-lightgrey min-h-fit font-ptm bg-white w-full items-center p-4 uppercase w-3/5;
@@ -7,7 +11,7 @@
 }
 
 .task-btn-group {
-  @apply flex bg-white items-center align-middle justify-end;
+  @apply flex bg-white items-center align-middle justify-end w-2/5;
 }
 
 .task-btn-group button {

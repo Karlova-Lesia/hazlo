@@ -5,7 +5,7 @@ import './styles.scss';
 function AuthFormLink({ text, path, link }) {
   return (
     <div className="link-wrapper">
-      <span className="pr-2">{text}</span>
+      <span>{text}</span>
       <Link to={path} className="link">{link}</Link>
     </div>
   );

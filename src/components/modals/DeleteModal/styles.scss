@@ -4,7 +4,7 @@
 }
 
 .delete-modal {
-  @apply fixed flex flex-col top-32 bg-white w-450 h-300;
+  @apply fixed flex flex-col top-32 bg-white w-450 min-h-fit;
 
   &-btn-group {
     @apply flex flex-row;
@@ -12,7 +12,7 @@
 }
 
 .header-text {
-  @apply flex justify-center text-lightgrey font-ptm text-h5 -m-2;
+  @apply flex justify-center text-lightgrey font-ptm text-h5 m-2;
 }
 
 .modal-icon-delete {
