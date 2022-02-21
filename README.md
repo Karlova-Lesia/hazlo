@@ -5,16 +5,20 @@ An application for monitoring the doing of tasks, by dividing the project into t
 ##Tech stack:
 
 - **React**
-
 - **Redux**
-
-- **json-server**
-
+- **Redux Toolkit**
+- **Prop-Types**
+- **React-Kanban**
+- **React-Alert**
+- **React-Icons**
+- **JSON-Server**
+- **JSON-Server-Auth**
+- **Axios**
 - **Tailwind CSS**
-
+- **SASS**
 - **Formik**
-
-- **Joi**
+- **Yup**
+- **Eslint**
 
 ## Available Scripts
 
@@ -56,6 +60,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 ###Server start
 
 `json-server db.json -m ./node_modules/json-server-auth --port 3001`
+
 
 
 ### _For_ _the_ _correct_ _work_ _when_ _starting_ _the_ _server,_ _follow_ _the_ _command_ _name_ `cp db.example.json db.json`.
