@@ -65,6 +65,7 @@
 
   .react-kanban-board {
     align-items: center !important;
+    @apply ml-0;
   }
 
   .react-kanban-column {
@@ -257,5 +258,31 @@
 
   .error-image-wrapper {
     @apply w-[150px];
+  }
+
+  .members-column {
+    &-wrapper {
+      @apply ml-0 mt-3 p-1;
+    }
+
+    &-header {
+      @apply m-1 text-[12px];
+    }
+
+    &-item {
+      @apply p-1 ml-2 mr-2 mt-0.5 mb-1 text-[10px];
+    }
+  }
+
+  .user-icon {
+    @apply w-[12px] h-[12px] mr-1;
+  }
+
+  .project-main-content {
+    @apply flex-col items-center;
+
+    &-wrapper {
+      @apply mt-2 ;
+    }
   }
 }

@@ -1,0 +1,13 @@
+.members-column {
+  &-wrapper {
+    @apply flex flex-col bg-middlegrey min-w-fit min-h-fit ml-10 mt-2.5 p-2 shadow-xl;
+  }
+
+  &-header {
+    @apply flex text-mint justify-center m-3 uppercase;
+  }
+
+  &-item {
+    @apply flex bg-white min-h-fit p-3 ml-4 mr-4 mt-1 mb-2 font-ptm text-gray-500 items-center;
+  }
+}

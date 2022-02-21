@@ -3,4 +3,10 @@ import { USERS_URL } from '../constants/endpoints';
 
 const getUsers = () => axiosInstance.get(USERS_URL);
 
-export { getUsers };
+const getMembersByIds = (memberIds) => {
+  const queryString = memberIds.join('&id=');
+
+  return axiosInstance.get(`${USERS_URL}?id=${queryString}`);
+};
+
+export { getUsers, getMembersByIds };
