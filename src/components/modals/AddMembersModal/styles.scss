@@ -4,7 +4,7 @@
 }
 
 .add-members-modal {
-  @apply fixed flex flex-col top-32 bg-white w-[450px] h-[560px];
+  @apply fixed flex flex-col top-32 bg-white w-450 h-560;
 }
 
 .form-select {
@@ -12,7 +12,7 @@
 }
 
 .checkbox-array {
-  @apply h-[300px] overflow-auto;
+  @apply overflow-auto h-300;
 }
 
 .select-btn-wrapper {
