@@ -11,7 +11,7 @@ function Checkbox({
 
   useEffect(() => {
     setIsSelected(!!memberIds.find((value) => value === userId));
-  }, []);
+  }, [memberIds, userId]);
 
   const onAddMembers = () => {
     const { members } = arrayHelpers.form.values;

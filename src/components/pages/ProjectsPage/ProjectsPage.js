@@ -19,7 +19,7 @@ function ProjectsPage() {
     .then((responseProjects) => setProjects(responseProjects.filter(
       (project) => project.ownerId === userId
           || project.memberIds.find((value) => value === userId),
-    ))), []);
+    ))), [userId]);
 
   const setMemberIds = (projectId, memberIds) => {
     setProjects(projects.map((project) => ((project.id === projectId) ? ({

@@ -14,7 +14,7 @@ function ProjectPage() {
   useEffect(() => getProject({ id })
     .then((response) => {
       setProject(response);
-    }), []);
+    }), [id]);
 
   return project ? (
     <MainContent title={project.title} style={{ flexDirection: 'column' }} className="project-main-content-wrapper">
