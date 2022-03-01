@@ -3,10 +3,6 @@
     @apply pt-25px pr-100px pb-20px pl-100px;
   }
 
-  .btn-logout:hover::after {
-    @apply hidden;
-  }
-
   .logo {
     @apply text-h3;
   }
@@ -72,7 +68,7 @@
   }
 
   .task-item {
-    @apply mb-1 w-170 ml-3px;
+    @apply mb-1 w-170;
 
     &-title {
       @apply p-2 text-8 w-4/5;
@@ -96,15 +92,15 @@
   }
 
   .input {
-    @apply h-12 p-5 text-14;
+    @apply h-12 pr-5 text-12;
   }
 
   .form-content {
-    @apply items-center mt-5;
+    @apply items-center mt-0;
   }
 
   .link-wrapper {
-    @apply pr-8 pl-0;
+    @apply pl-0 pb-1 pt-0;
 
     span {
       @apply text-12;
@@ -168,7 +164,7 @@
   }
 
   .btn {
-    @apply min-w-fit h-30 text-14;
+    @apply w-100 h-30 text-14 mb-3;
   }
 
   .modal-btn-group button {
@@ -285,7 +281,7 @@
     }
 
     &-header {
-      @apply m-2 text-12;
+      @apply m-2 text-10;
     }
 
     &-item {
