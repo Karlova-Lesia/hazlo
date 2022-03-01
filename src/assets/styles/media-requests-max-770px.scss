@@ -3,10 +3,6 @@
     @apply pt-15px pr-50px pb-15px pl-50px;
   }
 
-  .btn-logout:hover::after {
-    @apply hidden;
-  }
-
   .logo {
     @apply text-h5;
   }
@@ -97,11 +93,11 @@
   }
 
   .input {
-    @apply h-10 text-12;
+    @apply h-10 text-12 pr-3 pl-3 pt-4 pb-4;
   }
 
   .form-content {
-    @apply flex flex-col items-center mt-5;
+    @apply flex flex-col items-center mt-0;
   }
 
   .link-wrapper {

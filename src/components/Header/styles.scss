@@ -9,8 +9,3 @@
 .btn-logout {
   @apply flex;
 }
-
-.btn-logout:hover::after {
-  content: attr(data-title);
-  @apply flex bg-middlegrey font-ptm text-white absolute right-72 top-20 w-24 h-10 justify-center items-center shadow-xl;
-}

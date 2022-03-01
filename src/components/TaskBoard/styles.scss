@@ -4,7 +4,7 @@
 }
 
 .react-kanban-column {
-  @apply flex bg-middlegrey pt-10 shadow-xl w-260;
+  @apply flex bg-middlegrey pt-10 shadow-xl w-260 mb-6;
 }
 
 .react-kanban-card--dragging {
