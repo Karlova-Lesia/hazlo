@@ -62,7 +62,7 @@ function EditTaskModal({
               <Input labelValue="Name" type="text" name="title" placeholder="Name" />
             </div>
             <div className="w-2/5">
-              <Input labelValue="Estimate(m)" type="number" name="estimate" placeholder="Estimate" />
+              <Input labelValue="Estimate" type="number" name="estimate" placeholder="Estimate" />
             </div>
           </div>
           <DescriptionEditor />
