@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "email": "user@gmail.com",
+      "password": "$2a$10$4uOss48Z9EMLYa9W4XRfNOD4HEfkLaDseNT7EufWGzmqoOoxU0Y2W",
+      "firstName": "rthddhtrjturt",
+      "lastName": "tyjtykyu",
+      "id": 1
+    },
+    {
+      "email": "kk@gmail.com",
+      "password": "$2a$10$wC.ns5Tw2WlBvPLlsPqhdODI0S3zyZUJ5BrvXOHZeylNxzNlY8DW6",
+      "firstName": "Lesia",
+      "lastName": "Karlova",
+      "id": 2
+    }
+  ],
+  "projects": [
+    {
+      "title": "fhytdjyjyfk",
+      "description": "kyutlkilyifkdtrjh mngj",
+      "ownerId": 1,
+      "memberIds": [
+        1
+      ],
+      "id": 1
+    },
+    {
+      "title": "fghjfdjty ukftkutyt",
+      "description": "dngjsrthjtnrh gfhdkh",
+      "ownerId": 2,
+      "memberIds": [
+        2
+      ],
+      "id": 2
+    }
+  ],
+  "tasks": []
+}
